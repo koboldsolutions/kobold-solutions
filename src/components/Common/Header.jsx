@@ -45,7 +45,7 @@ function Header({ lightMode }) {
               </div>
               <h4 className="fw-300 mb-15 ">Diseñando el Futuro Digital</h4>
               <h1 className="fw-600 d-rotate wow">
-                <span className="rotate-text">soluciones web</span>
+                <span className="rotate-text">Soluciones web</span>
                 <span className="rotate-text"> a tu medida</span>
               </h1>
               <div className="text-center hover-this">

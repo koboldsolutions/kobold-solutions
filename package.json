@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next export && touch ./out/.nojekyll"
   },
   "dependencies": {
     "eslint": "8.47.0",

@@ -40,7 +40,7 @@ function BlogList() {
         },
         {
           "id": 4,
-          "date": "August 6, 2022",
+          "date": "August 2, 2022",
           "title": "Business meeting 2023 in San Francisco.",
           "image": `${prefix}/dark/assets/imgs/blog/cover.jpg`,
           "tags": [

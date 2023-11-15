@@ -10,7 +10,7 @@ function BlogList() {
     const [data, setData] = useState([
         {
           "id": 1,
-          "date": "August 3, 2022",
+          "date": "August 9, 2022",
           "title": "Free advertising for your online business.",
           "image": `${prefix}/dark/assets/imgs/blog/cover.jpg`,
           "tags": [

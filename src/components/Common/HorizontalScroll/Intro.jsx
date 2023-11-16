@@ -11,16 +11,19 @@ function Intro() {
 
             <div className="box pb-20">
               <div className="item">
-                <h4>Experiencia</h4>
+                <h4>Foco en el cliente</h4>
               </div>
               <div className="item">
                 <h4>Innovación</h4>
               </div>
               <div className="item">
-                <h4>Compromiso</h4>
+                <h4>Transparencia</h4>
               </div>
               <div className="item">
-                <h4>Creatividad</h4>
+                <h4>Empoderamiento</h4>
+              </div>
+              <div className="item">
+                <h4>Autonomia</h4>
               </div>
               <div className="item">
                 <h4>Colaboración</h4>

@@ -17,8 +17,9 @@ function ServicesScroll({ lightMode }) {
           "title": "Calidad en cada línea de código",
           "text": "Transformamos tus ideas en soluciones digitales personalizadas. Cada línea de código es pensada y optimizada para brindar un rendimiento excepcional y una experiencia fluida",
           "list-elements": [
-            "Presencia Online las 24/7.",
-            "Amplía Tu Audiencia.",
+            "Digitaliza tu empresa",
+            "Experiencias digitales",
+            "Amplía Tu Audiencia",
             "Genera Confianza.",
             "Promociona de Servicios y Productos.",
             "Mejora la Visibilidad en Búsquedas."
@@ -28,14 +29,16 @@ function ServicesScroll({ lightMode }) {
           "id": 2,
           "image": `/assets/imgs/services/2.jpg`,
           "number": "02.",
-          "type": "Diseño UI/UX y Branding",
-          "title": "Identidad de Marca",
-          "text": "Creamos diseños de alta calidad para agencias y marcas globales en todo el mundo.",
+          "type": "E-commerce",
+          "title": "Aumenta tus ventas ampliando tu presencia, pensamos en tu presencia Omni-canal",
+          "text": "Crea ",
           "list-elements": [
-            "Diseño de interfaces de usuario atractivas.",
-            "Creación de elementos visuales únicos.",
-            "Experiencias de usuario intuitivas.",
-            "Diseño coherente y atractivo en todos los puntos."
+            "Ventas 24/7 los 360 dias del añ0 ",
+            "Gestión de invetario y pedidos eficiente",
+            "Conocimiento de tus clientes",
+            "Reduce costos operativos",
+            "Facilita la experiencia de tu cliente",
+            "Competí en el mercado actual"
           ]
         },
         {

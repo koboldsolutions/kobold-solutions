@@ -17,7 +17,7 @@ function CallToAction({ lightMode, innerPageStyle }) {
             <div className="col-11 d-flex align-items-center">
               <div className="valign">
                 <h2 className="fz-50 d-rotate wow">
-                  <span className="rotate-text">¿Tienes una idea en menta?</span>
+                  <span className="rotate-text">¿Tienes una idea en mente?</span>
                   <span className="rotate-text">Consúltanos.</span>
                 </h2>
               </div>

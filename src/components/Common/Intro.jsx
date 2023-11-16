@@ -13,7 +13,7 @@ function Intro({ lightMode }) {
                   <svg className="textcircle" viewBox="0 0 500 500">
                     <defs><path id="textcircle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path></defs>
                     <text>
-                      <textPath xlinkHref="#textcircle" textLength="900"> A g e n c i a     B o u t i q u e - A g e n c i a     B o u t i q u e - </textPath>
+                      <textPath xlinkHref="#textcircle" textLength="900"> A g e n c i a     D I G I T A L - A g e n c i a     A G E N C I A- </textPath>
                     </text>
                   </svg>
                 </div>
@@ -25,15 +25,14 @@ function Intro({ lightMode }) {
           </div>
           <div className="col-lg-7 valign">
             <div className="cont sec-lg-head">
-              <h6 className="dot-titl mb-20">Nuestra Agencia</h6>
+              <h6 className="dot-titl mb-20">Nuestra Agencia Digital</h6>
               <h2 className="d-slideup wow">
-                <span className="sideup-text"><span className="">Digitalización Estratégica </span></span>
-                <span className="sideup-text"><span className="">para Impulsar tu Empresa o Negocio</span></span>
+                <span className="sideup-text"><span className="">Digitaliza tu negocio</span></span>
               </h2>
               <div className="row">
                 <div className="col-lg-12">
                   <div className="text mt-20">
-                    <p>Elevamos tu marca a nuevos niveles de impacto a través de un diseño visionario y soluciones personalizadas. Trabajamos con pasión para dejar una huella permanente en el mundo digital</p>
+                    <p>Desarrollamos soluciones personalizadas y diseños visionarios. Creemos en entregar soluciones tecnologicas que permiten que los usarios sean independientes</p>
                   </div>
                   
                   <div className="underline">
@@ -62,8 +61,10 @@ function Intro({ lightMode }) {
                   <h6>Desarrollo de Software a Medida</h6>
                 </div>
               </div>
-              <p className="fz-14">Damos vida a tus ideas con Desarrollo de Software a Medida, diseñando y construyendo soluciones 
+              <p className="fz-14">Damos vida a tus ideas, diseñando y construyendo soluciones 
               digitales desde la concepción hasta la implementación final. </p>
+              
+              //Mandar directo al formulario
                 <Link href="/services" className="arrow mt-40">
                   <span className="circle">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -86,10 +87,10 @@ function Intro({ lightMode }) {
                   </div>
                 </div>
                 <div>
-                  <h6>Diseño UI/UX y Branding</h6>
+                  <h6>E-Commerce</h6>
                 </div>
               </div>
-              <p className="fz-14">Transformamos tu visión en experiencias impactantes a través de Diseño de Interfaz de Usuario (UI) y Experiencia de Usuario (UX).</p>
+              <p className="fz-14">Transformamos tu visión en experiencias de compra. Creamos experiencias simples y emotivas que unen los objetivos de tu empresa con una excelente experiencia de compra.</p>
                 <Link href="/services" className="arrow mt-40">
                   <span className="circle">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -112,11 +113,10 @@ function Intro({ lightMode }) {
                   </div>
                 </div>
                 <div>
-                  <h6>Consultoría y Optimización de Software:</h6>
+                  <h6>Consultoría y Optimización de Software</h6>
                 </div>
               </div>
-              <p className="fz-14">new ways to showcase user content on digital support and envisioning the
-                future arts.</p>
+              <p className="fz-14">Compartimos nuestro conocimiento y experiencias para ayudarte a realizar tu siguiente paso</p>
                 <Link href="/services" className="arrow mt-40">
                   <span className="circle">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"

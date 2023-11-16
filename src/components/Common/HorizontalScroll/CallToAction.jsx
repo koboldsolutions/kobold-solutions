@@ -14,11 +14,11 @@ function CallToAction({ lightMode }) {
         <div className="row justify-content-center">
           <div className="col-lg-10">
             <div className="sec-lg-head text-center">
-              <h6 className="dot-titl mb-10">Contacto</h6>
+              <h6 className="dot-titl mb-10">Contáctanos</h6>
               <h2 className="fz-70 fw-700">
-                <span>¿Tienes una idea en menta?</span>
+                <span>¿Necesitas ayuda?</span>
                 <br />
-                <span>Consúltanos.</span>
+                <span>Agenda una llamada de 15 minutos, gratis!</span>
               </h2>
               <Link href="/contact"
                 className="butn-circle colorbg-2 d-flex align-items-center text-center mt-50 m-auto">

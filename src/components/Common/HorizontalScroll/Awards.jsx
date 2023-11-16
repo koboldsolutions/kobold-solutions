@@ -33,26 +33,26 @@ function Awards({ lightMode }) {
     {
       "id": 1,
       "title": "Investigación",
-      "text": "Nos sumergimos en tu visión y objetivos, realizando una investigación del mercado y comprendiendo tus necesidades.",
-      "number": "01"
+      "text": "Nos sumergimos en tu visión y objetivos, realizando una investigación y comprendiendo tus necesidades, sin costo.",
+      "number": "1"
     },
     {
       "id": 2,
-      "title": "Concepto",
-      "text": " Nuestro equipo creativo colabora para dar vida a tu visión, transformando tus ideas en conceptos impactantes.",
-      "number": "02"
+      "title": "Definición",
+      "text": " Nuestro equipo trabaja para dar vida a tu visión, transformando tus ideas en soluciones impactantes.",
+      "number": "2"
     },
     {
       "id": 3,
-      "title": "Implementación",
-      "text": "Utilizamos tecnologías de vanguardia y las mejores prácticas de la industria para construir un producto digital robusto. ",
-      "number": "03"
+      "title": "Desarrollo",
+      "text": "Utilizamos tecnologías de vanguardia y las mejores prácticas de la industria para construir una solucion digital robusta. ",
+      "number": "3"
     },
     {
       "id": 4,
       "title": "Entrega",
-      "text": "Finalizamos el proyecto con éxito y entregamos resultados que aumentarán tus tasas de conversión. ",
-      "number": "04"
+      "text": "Estamos presentes durante la entrega del proyecto y post entrega del proyecto. ",
+      "number": "4"
     }
   ]);
 
@@ -67,8 +67,8 @@ function Awards({ lightMode }) {
         <div className="sec-lg-head mb-80">
           <div className="row justify-content-center">
             <div className="col-lg-6 text-center">
-              <h6 className="dot-titl mb-15">Visión Integral</h6>
-              <h3>Nuestro Enfoque.</h3>
+              <h6 className="dot-titl mb-15">Experiencia en software</h6>
+              <h3>Nuestro Proceso</h3>
             </div>
           </div>
         </div>

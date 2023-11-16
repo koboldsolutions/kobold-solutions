@@ -22,25 +22,25 @@ function Marq() {
                       className="fz-50 ml-50 stroke icon">*</span></h4>
                   </div>
                   <div className="item">
-                    <h4 className="d-flex align-items-center"><span>Consultoría </span> <span
+                    <h4 className="d-flex align-items-center"><span>E-Commerce </span> <span
                       className="fz-50 ml-50 stroke icon">*</span></h4>
                   </div>
                   <div className="item">
-                    <h4 className="d-flex align-items-center"><span>Optimización de Software</span> <span
+                    <h4 className="d-flex align-items-center"><span>WooCommerce</span> <span
                       className="fz-50 ml-50 stroke icon">*</span></h4>
                   </div>
                 </div>
                 <div className="box non-strok">
                   <div className="item">
-                    <h4 className="d-flex align-items-center"><span>Desarrollo de Software</span> <span
+                    <h4 className="d-flex align-items-center"><span>Shopify</span> <span
                       className="fz-50 ml-50 stroke icon">*</span></h4>
                   </div>
                   <div className="item">
-                    <h4 className="d-flex align-items-center"><span>Diseño UI/UX</span> <span
+                    <h4 className="d-flex align-items-center"><span>CRM's</span> <span
                       className="fz-50 ml-50 stroke icon">*</span></h4>
                   </div>
                   <div className="item">
-                    <h4 className="d-flex align-items-center"><span>WordPress</span> <span
+                    <h4 className="d-flex align-items-center"><span>Integraciones</span> <span
                       className="fz-50 ml-50 stroke icon">*</span></h4>
                   </div>
                   <div className="item">

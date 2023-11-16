@@ -43,7 +43,7 @@ function Header({ lightMode }) {
               <CubeComponent className="threecube" />
                
               </div>
-              <h4 className="fw-300 mb-15 ">Diseñando el Futuro Digital</h4>
+              <h4 className="fw-300 mb-15 ">Diseñando tu Futuro Digital</h4>
               <h1 className="fw-600 d-rotate wow">
                 <span className="rotate-text">Soluciones web</span>
                 <span className="rotate-text"> a tu medida</span>
@@ -59,7 +59,7 @@ function Header({ lightMode }) {
                       </defs>
                       <text>
                       
-                        <textPath xlinkHref="#textcircle1" textLength="900">Potenciar - Transformar - Inspirar -</textPath>
+                        <textPath xlinkHref="#textcircle1" textLength="900">Websites - Mobile - eCommerce - Consultorias -</textPath>
                       </text>
                     </svg>
                   </div>

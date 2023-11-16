@@ -63,8 +63,7 @@ function Intro({ lightMode }) {
               </div>
               <p className="fz-14">Damos vida a tus ideas, diseñando y construyendo soluciones 
               digitales desde la concepción hasta la implementación final. </p>
-              
-              //Mandar directo al formulario
+              {/* Mandar directo al formulario */}
                 <Link href="/services" className="arrow mt-40">
                   <span className="circle">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"

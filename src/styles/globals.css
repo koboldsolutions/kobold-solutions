@@ -110,3 +110,13 @@ body {
   color: #000;
 }
 
+.starfx {
+  border-radius: 25px;
+  background: radial-gradient( circle, rgba(58, 181, 74, 1) 0%, rgba(57, 178, 73, 1) 5%, rgba(58, 173, 73, 1) 21%, rgba(53, 163, 67, 1) 33%, rgba(42, 125, 53, 1) 72% );
+  box-shadow: 0 0 15px 7px rgba(58, 181, 74, 0.5);
+}
+
+.img-400 {
+  max-width: 100%;
+ height: 350px;
+}

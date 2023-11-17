@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 //= Data
 import  {ScrollTrigger}  from "gsap/dist/ScrollTrigger.js";
 import prefix from '@/common/prefix';
+import Link from 'next/link';
 function Footer({ lightMode, subBg }) {
 
   const useIsomorphicLayoutEffect = typeof window !== "undefined" 
@@ -31,7 +32,7 @@ function Footer({ lightMode, subBg }) {
       <div className="footer-container">
         <div className="container pb-80 pt-80 ontop">
           <div className="row">
-            <div className="col-lg-3">
+            <div className="col-lg-4">
               <div className="colum md-mb50">
                 <div className="tit mb-20">
                   <h6>Address</h6>
@@ -41,7 +42,7 @@ function Footer({ lightMode, subBg }) {
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 offset-lg-1">
+            <div className="col-lg-4 offset-lg-1">
               <div className="colum md-mb50">
                 <div className="tit mb-20">
                   <h6>Contacto</h6>
@@ -51,7 +52,7 @@ function Footer({ lightMode, subBg }) {
                     <a >info@koboldsolutions.com</a>
                   </p>
                   <h5>
-                    <a >+591 755 21 925</a>
+                    <Link target="_blank" href="https://wa.me/59175521925?text=I'm%20interested%20in%20your%20car%20for%20sale">+591 755 21 925</Link>
                   </h5>
                 </div>
               </div>
@@ -61,21 +62,21 @@ function Footer({ lightMode, subBg }) {
                 <h6>Social</h6>
               </div>
               <ul className="rest social-text">
-                <li>
-                  <a >Facebook</a>
+              <li >
+                  <Link target="_blank" href="https://www.facebook.com">Facebook</Link>
                 </li>
                 <li>
-                  <a>Twitter</a>
+                <Link target="_blank" href="https://www.x.com">X</Link>
                 </li>
                 <li>
-                  <a >LinkedIn</a>
+                <Link target="_blank" href="https://www.linkedin.com">LinkedIn</Link>
                 </li>
                 <li>
-                  <a>Instagram</a>
+                <Link target="_blank" href="https://instagram.com">Instagram</Link>
                 </li>
               </ul>
             </div>
-            <div className="col-lg-3">
+            {/* <div className="col-lg-3">
               <div className="tit mb-20">
                 <h6>Subscríbete</h6>
               </div>
@@ -89,7 +90,7 @@ function Footer({ lightMode, subBg }) {
                   </div>
                 </form>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="sub-footer pt-40 pb-40 bord-thin-top ontop">

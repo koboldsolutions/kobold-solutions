@@ -25,7 +25,7 @@ function Header({ lightMode }) {
         
       </div>
       
-        <div className="row justify-content-center full-height">
+        <div className="row justify-content-center">
           <div className="col-lg-3 d-flex align-items-start">
           
           
@@ -39,16 +39,16 @@ function Header({ lightMode }) {
           </div>
           <div className="col-lg-6 valign">
             <div className="caption text-center full-width md-mb50">
-              <div className="mb-30">
+      
               <CubeComponent className="threecube" />
                
-              </div>
+      
               <h4 className="fw-300 mb-15 ">Diseñando tu Futuro Digital</h4>
               <h1 className="fw-600 d-rotate wow">
                 <span className="rotate-text">Soluciones web</span>
                 <span className="rotate-text"> a tu medida</span>
               </h1>
-              <div className="text-center hover-this">
+              <div className="text-center hover-this mb-10">
                 <div className="circle-button hover-anim">
                   <div className="rotate-circle fz-30 text-u">
                     <svg className="textcircle" viewBox="0 0 500 500">
@@ -63,8 +63,8 @@ function Header({ lightMode }) {
                       </text>
                     </svg>
                   </div>
-                  <div className="in-circle text-center">
-                  <svg className="svg-animation star" width="100" height="100" viewBox="0 0 100 100"
+                  <div className="in-circle text-center starfx">
+                  <svg className="svg-animation star "  width="100" height="100" viewBox="0 0 100 100"
                   fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                   <line y1="50" x2="100" y2="50" vectorEffect="non-scaling-stroke"
                     stroke="currentColor" style={{ "--index": 1, "--transform": '30deg' }}></line>

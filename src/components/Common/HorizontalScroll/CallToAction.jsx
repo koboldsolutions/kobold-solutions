@@ -18,7 +18,7 @@ function CallToAction({ lightMode }) {
               <h2 className="fz-70 fw-700">
                 <span>¿Necesitas ayuda?</span>
                 <br />
-                <span>Agenda una llamada de 15 minutos, gratis!</span>
+                <span>Agenda una llamada de 15 minutos, ¡gratis!</span>
               </h2>
               <Link href="/contact"
                 className="butn-circle colorbg-2 d-flex align-items-center text-center mt-50 m-auto">

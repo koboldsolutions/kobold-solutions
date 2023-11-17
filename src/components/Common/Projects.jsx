@@ -40,7 +40,7 @@ function Projects() {
               </div>
             </div>
           </div>
-        <div className="row md-marg">
+        <div className="row md-marg mt-50">
           {
             data.map((item) => (
               <div className="col-lg-4" key={item.id}>

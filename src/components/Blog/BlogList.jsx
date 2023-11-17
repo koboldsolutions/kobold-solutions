@@ -10,64 +10,26 @@ function BlogList() {
     const [data, setData] = useState([
         {
           "id": 1,
-          "date": "August 9, 2022",
-          "title": "Free advertising for your online business.",
-          "image": `${prefix}/dark/assets/imgs/blog/cover.jpg`,
+          "date": "16 de Octubre, 2023",
+          "title": "Shopify vs. WordPress en Bolivia: Cuándo Usar Cada Solución",
+          "image": `${prefix}/dark/assets/imgs/blog/blog1/main.jpg`,
           "tags": [
             "Marketing",
             "Design"
-          ]
+          ],
+          "link": "/shopify-vs-wordpress-en-bolivia",
         },
         {
           "id": 2,
-          "date": "August 2, 2022",
-          "title": "Business meeting 2023 in San Francisco.",
-          "image": `${prefix}/dark/assets/imgs/blog/cover.jpg`,
+          "date": "25 de Octubre, 2023",
+          "title": "¿Cuándo Necesitas un eCommerce? Señales de que es el Momento Adecuado",
+          "image": `${prefix}/dark/assets/imgs/blog/blog2/main.jpg`,
           "tags": [
             "Marketing",
             "Design"
-          ]
+          ],
+          "link": "/cuanto-necesitas-un-ecommerce",
         },
-        {
-          "id": 3,
-          "date": "August 6, 2022",
-          "title": "Free advertising for your online business.",
-          "image": `${prefix}/dark/assets/imgs/blog/cover.jpg`,
-          "tags": [
-            "Marketing",
-            "Design"
-          ]
-        },
-        {
-          "id": 4,
-          "date": "August 2, 2022",
-          "title": "Business meeting 2023 in San Francisco.",
-          "image": `${prefix}/dark/assets/imgs/blog/cover.jpg`,
-          "tags": [
-            "Marketing",
-            "Design"
-          ]
-        },
-        {
-          "id": 5,
-          "date": "August 6, 2022",
-          "title": "Free advertising for your online business.",
-          "image": `${prefix}/dark/assets/imgs/blog/cover.jpg`,
-          "tags": [
-            "Marketing",
-            "Design"
-          ]
-        },
-        {
-          "id": 6,
-          "date": "August 6, 2022",
-          "title": "Business meeting 2023 in San Francisco.",
-          "image": `${prefix}/dark/assets/imgs/blog/cover.jpg`,
-          "tags": [
-            "Marketing",
-            "Design"
-          ]
-        }
       ]);
   return (
     <section className="blog-list-half section-padding sub-bg">
@@ -85,7 +47,7 @@ function BlogList() {
                       <div className="full-width">
                         <span className="date fz-12 ls1 text-u opacity-7 mb-15">{item.date}</span>
                         <h5>
-                          <Link href="/blog">{item.title}</Link>
+                          <Link href={item.link}>{item.title}</Link>
                         </h5>
                         <div className="tags colorbg mt-15">
                           {

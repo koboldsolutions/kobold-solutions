@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link';
 function ContactForm() {
   return (
     <section className="contact-crev section-padding">
@@ -11,26 +11,27 @@ function ContactForm() {
               <h2 className="fz-50">Despejamos<br /> tus dudas.</h2>
               <p className="fz-15 mt-10">¿Listo para hacer realidad tu proyecto? Ya sea para colaborar o simplemente para charlar, ¡estamos aquí para escucharte!</p>
               <div className="phone fz-30 fw-600 mt-30 underline">
-                <a href="#0">+1 755 21 925</a>
+                <Link target="_blank" href="https://wa.me/59175521925?text=I'm%20interested%20in%20your%20car%20for%20sale">+591 755 21 925</Link>
               </div>
               <ul className="rest social-text d-flex mt-60">
                 <li className="mr-30">
-                  <a href="#0">Facebook</a>
+                  <Link target="_blank" href="https://www.facebook.com">Facebook</Link>
                 </li>
                 <li className="mr-30">
-                  <a href="#0">Twitter</a>
+                <Link target="_blank" href="https://www.x.com">X</Link>
                 </li>
                 <li className="mr-30">
-                  <a href="#0">LinkedIn</a>
+                <Link target="_blank" href="https://www.linkedin.com">LinkedIn</Link>
                 </li>
                 <li>
-                  <a href="#0">Instagram</a>
+                <Link target="_blank" href="https://instagram.com">Instagram</Link>
                 </li>
               </ul>
             </div>
           </div>
           <div className="col-lg-6 offset-lg-1 valign">
-            <div className="full-width">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d949.7522618902294!2d-63.196563130368524!3d-17.79127189894788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e81b97e70887%3A0xce8a4799d783c476!2sBarasea%2018%2C%20Santa%20Cruz%20de%20la%20Sierra!5e0!3m2!1sen!2sbo!4v1700252115280!5m2!1sen!2sbo" width="600" height="450"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            {/* <div className="full-width">
               <form id="contact-form" method="post" action="contact.php">
                 <div className="messages"></div>
                 <div className="controls row">
@@ -62,7 +63,8 @@ function ContactForm() {
                   </div>
                 </div>
               </form>
-            </div>
+            </div> */}
+            
           </div>
         </div>
       </div>

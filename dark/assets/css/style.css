@@ -254,11 +254,11 @@ figure {
 }
 
 .main-color {
-  color: #c9f31d !important;
+  color: #39B549 !important;
 }
 
 .main-colorbg {
-  background-color: #c9f31d;
+  background-color: #39B549;
 }
 
 .main-color2 {
@@ -4688,7 +4688,7 @@ body.loaded {
 .blog-list .item .background .more a {
   font-size: 14px;
   padding: 14px 35px;
-  background: #c9f31d;
+  background: #39B549;
   border-radius: 30px;
 }
 

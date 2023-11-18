@@ -82,7 +82,7 @@ function Intro({ lightMode }) {
               <div className="d-flex align-items-center pb-20 mb-30 bord-thin-bottom">
                 <div className="mr-30">
                   <div className="icon-img-50">
-                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/icons/1.png`} alt="" />
+                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/landing/Digitaliza tu empresa.jpg`} alt="" />
                   </div>
                 </div>
                 <div>

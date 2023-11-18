@@ -19,7 +19,7 @@ function Intro({ lightMode }) {
                 </div>
               </div>
               <div className="half-circle-img">
-                <img src={`${prefix}/dark/assets/imgs/landing/ofi.jpg`} alt="" />
+                <img src={`${prefix}/dark/assets/imgs/landing/ofidigital.jpg`} alt="" />
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@ function Intro({ lightMode }) {
               <div className="d-flex align-items-center pb-20 mb-30 bord-thin-bottom">
                 <div className="mr-30">
                   <div className="icon-img-50">
-                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/landing/Digitaliza tu empresa.jpg`} alt="" />
+                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/icons/1.png`} alt="" />
                   </div>
                 </div>
                 <div>
@@ -112,7 +112,7 @@ function Intro({ lightMode }) {
                   </div>
                 </div>
                 <div>
-                  <h6>Consultoría y Optimización de Software</h6>
+                  <h6>Consultoría de Software</h6>
                 </div>
               </div>
               <p className="fz-14">Compartimos nuestro conocimiento y experiencias para ayudarte a realizar tu siguiente paso</p>

@@ -11,7 +11,7 @@ function CallToAction({ lightMode, innerPageStyle }) {
   return (
     <section className="call-action-img">
       <div className="container">
-        <div className="sec-bg-img bg-img parallaxie" data-background={`${prefix}/dark/assets/imgs/services/parallax.jpg`}></div>
+        <div className="sec-bg-img bg-img parallaxie" data-background={`${prefix}/dark/assets/imgs/landing/calltoaction.jpg`}></div>
         <div className="sec-lg-head section-padding">
           <div className="row ontop">
             <div className="col-11 d-flex align-items-center">

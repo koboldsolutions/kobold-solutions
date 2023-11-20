@@ -96,12 +96,12 @@ function Blog1() {
             <div className="row">
               <div className="col-sm-6">
                 <div className="iner-img sm-mblogpic0">
-                  <img src={`${prefix}/dark/assets/imgs/blog/blog1/shopify-logo.png`} alt="" />
+                  <img src={`${prefix}/dark/assets/imgs/blog/blog1/Shopify Mauro.png`} alt="" />
                 </div>
               </div>
               <div className="col-sm-6">
                 <div className="iner-img">
-                  <img src={`${prefix}/dark/assets/imgs/blog/blog1/blog1-transparent.png`}  alt="" />
+                  <img src={`${prefix}/dark/assets/imgs/blog/blog1/Backoffice Mauro.png`}  alt="" />
                 </div>
               </div>
             </div>
@@ -130,12 +130,12 @@ Soporte al cliente: Shopify ofrece un servicio de soporte al cliente tremendo, l
             <div className="row">
               <div className="col-sm-6">
                 <div className="iner-img sm-mblogpic0">
-                  <img src={`${prefix}/dark/assets/imgs/blog/blog1/woo-trans.png`} alt="" />
+                  <img src={`${prefix}/dark/assets/imgs/blog/blog1/WooCommerce-Mauro.png`} alt="" />
                 </div>
               </div>
               <div className="col-sm-6">
                 <div className="iner-img">
-                  <img src={`${prefix}/dark/assets/imgs/blog/blog1/wp-logo.png`} alt="" />
+                  <img src={`${prefix}/dark/assets/imgs/blog/blog1/WP Mauro.png`} alt="" />
                 </div>
               </div>
             </div>

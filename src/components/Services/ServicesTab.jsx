@@ -17,7 +17,7 @@ function ServicesTab({ lightMode }) {
               <div className="tab-content current" id="tabs-1">
                 <div className="item">
                   <div className="img">
-                    <img src={`${prefix}//${lightMode ? 'light' : 'dark'}/assets/imgs/services/1.jpg`} alt="" />
+                    <img src={`${prefix}//${lightMode ? 'light' : 'dark'}/assets/imgs/landing/pilares.jpg`} alt="" />
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-60 mb-40">
@@ -37,7 +37,7 @@ function ServicesTab({ lightMode }) {
               <div className="tab-content" id="tabs-2">
                 <div className="item">
                   <div className="img">
-                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/services/2.jpg`} alt="" />
+                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/landing/pilares.jpg`} alt="" />
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-60 mb-40">
@@ -56,7 +56,7 @@ function ServicesTab({ lightMode }) {
               <div className="tab-content" id="tabs-3">
                 <div className="item">
                   <div className="img">
-                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/services/3.jpg`} alt="" />
+                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/landing/pilares.jpg`} alt="" />
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-60 mb-40">
@@ -75,7 +75,7 @@ function ServicesTab({ lightMode }) {
               <div className="tab-content" id="tabs-4">
                 <div className="item">
                   <div className="img">
-                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/services/1.jpg`} alt="" />
+                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/landing/pilares.jpg`} alt="" />
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-60 mb-40">

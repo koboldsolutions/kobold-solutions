@@ -10,7 +10,7 @@ import Footer from '@/components/Common/Footer';
 import BlogHeader from '@/components/Blog/Details/BlogHeader';
 import BlogContent from '@/components/Blog/Details/BlogContent';
 import Link from 'next/link';
-
+import prefix from '@/common/prefix';
 
 function Blog1() {
   

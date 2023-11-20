@@ -42,7 +42,7 @@ function Blog1() {
                   <div className="author-info">
                     <div className="d-flex align-items-center">
                       <a href="#0" className="circle-60">
-                        <img src="/kobold-solutions/dark/assets/imgs/koboldlogo02.png"  alt="" className="circle-img" />
+                        <img src={`${prefix}/dark/assets/imgs/koboldlogo02.png`}  alt="" className="circle-img" />
                       </a>
                       <a href="#0" className="ml-20">
                         <span className="opacity-7">Autor</span>
@@ -62,10 +62,10 @@ function Blog1() {
           </div>
         </div>
       </div>
-      {/* <div className="background bg-img parallaxie mt-80" data-background="/kobold-solutions/dark/assets/imgs/blog/header.jpg"></div> */}
-      <div className="background bg-img parallaxie mt-80 img-400" data-background="/kobold-solutions/dark/assets/imgs/blog/header.jpg">
 
-      <img src="/kobold-solutions/dark/assets/imgs/blog/blog1/stock.jpg"  alt="" />
+      <div className="background bg-img parallaxie mt-80 img-400" data-background={`${prefix}/dark/assets/imgs/blog/header.jpg`}>
+
+      <img src={`${prefix}/dark/assets/imgs/blog/blog1/stock.jpg`} alt="" />
       </div>
       
 
@@ -96,12 +96,12 @@ function Blog1() {
             <div className="row">
               <div className="col-sm-6">
                 <div className="iner-img sm-mblogpic0">
-                  <img src="/kobold-solutions/dark/assets/imgs/blog/blog1/shopify-logo.png" alt="" />
+                  <img src={`${prefix}/dark/assets/imgs/blog/blog1/shopify-logo.png`} alt="" />
                 </div>
               </div>
               <div className="col-sm-6">
                 <div className="iner-img">
-                  <img src="/kobold-solutions/dark/assets/imgs/blog/blog1/blog1-transparent.png" alt="" />
+                  <img src={`${prefix}/dark/assets/imgs/blog/blog1/blog1-transparent.png`}  alt="" />
                 </div>
               </div>
             </div>
@@ -130,12 +130,12 @@ Soporte al cliente: Shopify ofrece un servicio de soporte al cliente tremendo, l
             <div className="row">
               <div className="col-sm-6">
                 <div className="iner-img sm-mblogpic0">
-                  <img src="/kobold-solutions/dark/assets/imgs/blog/blog1/woo-trans.png" alt="" />
+                  <img src={`${prefix}/dark/assets/imgs/blog/blog1/woo-trans.png`} alt="" />
                 </div>
               </div>
               <div className="col-sm-6">
                 <div className="iner-img">
-                  <img src="/kobold-solutions/dark/assets/imgs/blog/blog1/wp-logo.png" alt="" />
+                  <img src={`${prefix}/dark/assets/imgs/blog/blog1/wp-logo.png`} alt="" />
                 </div>
               </div>
             </div>
@@ -189,7 +189,7 @@ Soporte al cliente: Shopify ofrece un servicio de soporte al cliente tremendo, l
           <div className="flex">
             <div className="author-img mr-30">
               <div className="img">
-                <img src="/kobold-solutions/dark/assets/imgs/koboldlogo02.png" alt="" className="circle-img" />
+                <img src={`${prefix}/dark/assets/imgs/koboldlogo02.png`} alt="" className="circle-img" />
               </div>
             </div>
             <div className="cont valign">
@@ -207,7 +207,7 @@ Soporte al cliente: Shopify ofrece un servicio de soporte al cliente tremendo, l
               <h6 className="fw-600 fz-16">5 maneras de aumentar el tráfico en tu página web.</h6>
             </Link>
           </div> */}
-          <div className="thumb-post ml-auto text-right bg-img" data-background="/dark/assets/imgs/blog/blogpic.jpg">
+          <div className="thumb-post ml-auto text-right bg-img" data-background={`${prefix}/dark/assets/imgs/blog/blogpic.jpg`}>
             <Link href="/cuanto-necesitas-un-ecommerce">
               <span className="fz-12 text-u ls1 main-color mb-15">Próximo Blog <i
                 className="pe-7s-angle-right"></i></span>

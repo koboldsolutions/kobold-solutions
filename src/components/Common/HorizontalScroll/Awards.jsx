@@ -83,8 +83,8 @@ function Awards({ lightMode }) {
                       <h6>{item.title}</h6>
                       <h2 className="fz-60 stroke num-font mt-30">{item.number}</h2>
                       <p className="fz-14 mt-30">{item.text}</p>
-                      <Link href="/" className="mt-15">
-                        <span>
+         
+                        <span className="mt-15">
                           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -92,7 +92,7 @@ function Awards({ lightMode }) {
                               fill="currentColor"></path>
                           </svg>
                         </span>
-                      </Link>
+            
                     </div>
                   </SwiperSlide>
                 ))

@@ -1,8 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-
+import prefix from '@/common/prefix';
 export default function Document() {
 
-  const prefix = '/kobold-solutions';
+
 
   return (
     <Html lang="en">
@@ -12,7 +12,7 @@ export default function Document() {
         <meta name="description" content="Web Development Agency" />
         <meta name="author" content="" />
         {/* ------ Favicon ------ */}
-        <link rel="shortcut icon" href="/dark/assets/imgs/favicon.ico" />
+        <link rel="shortcut icon" href={`${prefix}/favicon.ico`} />
         {/* ------ Google Fonts ------ */}
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@100;200;300;400;500;600;700;800&display=swap" />

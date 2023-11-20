@@ -11,7 +11,7 @@ function ContactForm() {
               <h2 className="fz-50">Despejamos<br /> tus dudas.</h2>
               <p className="fz-15 mt-10">¿Listo para hacer realidad tu proyecto? Ya sea para colaborar o simplemente para charlar, ¡estamos aquí para escucharte!</p>
               <div className="phone fz-30 fw-600 mt-30 underline">
-                <Link target="_blank" href="https://wa.me/59175521925?text=I'm%20interested%20in%20your%20car%20for%20sale">+591 755 21 925</Link>
+                <Link target="_blank" href="https://wa.me/59175521925?text=Estoy%20interesado%20en%20sus%20servicios%20de%20Tecnologia!">+591 755 21 925</Link>
               </div>
               <ul className="rest social-text d-flex mt-60">
                 <li className="mr-30">

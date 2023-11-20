@@ -10,7 +10,7 @@ import Footer from '@/components/Common/Footer';
 import BlogHeader from '@/components/Blog/Details/BlogHeader';
 import BlogContent from '@/components/Blog/Details/BlogContent';
 import Link from 'next/link';
-
+import prefix from '@/common/prefix';
 
 function Blog2() {
   
@@ -41,31 +41,31 @@ function Blog2() {
                 <div className="d-flex">
                   <div className="author-info">
                     <div className="d-flex align-items-center">
-                      <a href="#0" className="circle-60">
-                        <img src="/kobold-solutions/dark/assets/imgs/koboldlogo02.png"  alt="" className="circle-img" />
-                      </a>
-                      <a href="#0" className="ml-20">
-                        <span className="opacity-7">Autor</span>
+         
+                        <img src={`${prefix}/dark/assets/imgs/koboldlogo02.png`}  alt="" className="circle-img circle-60" />
+              
+                      <div  className="ml-20">
+                        <span className="opacity-7 ml-20">Autor</span>
                         <h6 className="fz-16">Kobold Solutions</h6>
-                      </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="right-info ml-auto">
-              <a href="#0">
+              <div >
                       <span className="opacity-7">Publicado</span>
                       <h6 className="fz-16">16 de Octubre, 2023</h6>
-                    </a>
+                    </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <div className="background bg-img parallaxie mt-80" data-background="/kobold-solutions/dark/assets/imgs/blog/header.jpg"></div> */}
-      <div className="background bg-img parallaxie mt-80 img-400" data-background="/kobold-solutions/dark/assets/imgs/blog/header.jpg">
 
-      <img src="/kobold-solutions/dark/assets/imgs/blog/blog2/stock.jpg"  alt="" />
+      <div className="background bg-img parallaxie mt-80 img-400" data-background={`${prefix}/dark/assets/imgs/blog/header.jpg`}>
+
+      <img src={`${prefix}/dark/assets/imgs/blog/blog2/stock.jpg`}  alt="" />
       </div>
       
 
@@ -89,12 +89,12 @@ function Blog2() {
             <div className="row mt-50">
               <div className="col-sm-6">
                 <div className="iner-img sm-mblogpic0">
-                  <img src="/kobold-solutions/dark/assets/imgs/blog/blog2/stock1.jpg" alt="" />
+                  <img src={`${prefix}/dark/assets/imgs/blog/blog2/stock1.jpg`} alt="" />
                 </div>
               </div>
               <div className="col-sm-6">
                 <div className="iner-img">
-                  <img src="/kobold-solutions/dark/assets/imgs/blog/blog2/stock2.jpg" alt="" />
+                  <img src={`${prefix}/dark/assets/imgs/blog/blog2/stock2.jpg`} alt="" />
                 </div>
               </div>
             </div>
@@ -239,7 +239,7 @@ function Blog2() {
           <div className="flex">
             <div className="author-img mr-30">
               <div className="img">
-                <img src="/kobold-solutions/dark/assets/imgs/koboldlogo02.png" alt="" className="circle-img" />
+                <img src={`${prefix}/dark/assets/imgs/koboldlogo02.png`} alt="" className="circle-img" />
               </div>
             </div>
             <div className="cont valign">
@@ -251,7 +251,7 @@ function Blog2() {
           </div>
         </div>
         <div className="next-prv-post flex mt-50">
-        <div className="thumb-post bg-img" data-background="/dark/assets/imgs/blog/blogpic.jpg">
+        <div className="thumb-post bg-img" data-background={`${prefix}/dark/assets/imgs/blog/blogpic.jpg`} >
             <Link href="/shopify-vs-wordpress-en-bolivia">
               <span className="fz-12 text-u ls1 main-color mb-15"><i className="pe-7s-angle-left"></i> Anterior Blog</span>
               <h6 className="fw-600 fz-16">Shopify vs. WordPress en Bolivia: Cuándo Usar Cada Solución</h6>

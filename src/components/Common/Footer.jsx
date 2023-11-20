@@ -52,7 +52,7 @@ function Footer({ lightMode, subBg }) {
                     <a >info@koboldsolutions.com</a>
                   </p>
                   <h5>
-                    <Link target="_blank" href="https://wa.me/59175521925?text=I'm%20interested%20in%20your%20car%20for%20sale">+591 755 21 925</Link>
+                    <Link target="_blank" href="https://wa.me/59175521925?text=Estoy%20interesado%20en%20sus%20servicios%20de%20Tecnologia!">+591 755 21 925</Link>
                   </h5>
                 </div>
               </div>

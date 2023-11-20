@@ -11,19 +11,19 @@ function ServicesSection({ lightMode }) {
       "id": 1,
       "image": "/assets/imgs/icons/0.png",
       "title": "Desarrollo de Software a Medida",
-      "text": "Praesent faucibus nisl sit amet nulla pretium a sed purus."
+      "text": "Entendemos tu necesidad y la traemos a la vida, puede ser con desarrollo directo o con herramientas de Low-Code o NoCode, de acuerdo a tu necesidad."
     },
     {
       "id": 2,
       "image": "/assets/imgs/icons/1.png",
-      "title": "Diseño UI/UX y Branding",
-      "text": "Praesent faucibus nisl sit amet nulla pretium a sed purus."
+      "title": "E-Commerce y CRMs",
+      "text": "Transformamos tu visión en experiencias de compra, con con desarrollo directo o con herramientas de Low-Code o NoCode (WordPress-WooCommerce, Shopify, CRMs y más)"
     },
     {
       "id": 3,
       "image": "/assets/imgs/icons/2.png",
       "title": "Consultoría y Optimización de Software",
-      "text": "Praesent faucibus nisl sit amet nulla pretium a sed purus."
+      "text": "Compartimos nuestro conocimiento y experiencias para ayudarte a realizar tu siguiente paso."
     },
   ]);
   
@@ -40,7 +40,7 @@ function ServicesSection({ lightMode }) {
             </div>
             <div className="col-lg-4 d-flex align-items-center">
               <div className="text">
-                <p>Entregamos productos digitales de vanguardia que marcan la diferencia.</p>
+                <p></p>
               </div>
             </div>
           </div>

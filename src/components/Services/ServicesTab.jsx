@@ -17,7 +17,7 @@ function ServicesTab({ lightMode }) {
               <div className="tab-content current" id="tabs-1">
                 <div className="item">
                   <div className="img">
-                    <img src={`${prefix}//${lightMode ? 'light' : 'dark'}/assets/imgs/landing/pilares.jpg`} alt="" />
+                    <img src={`${prefix}//${lightMode ? 'light' : 'dark'}/assets/imgs/services/1.jpg`} alt="" />
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-60 mb-40">
@@ -25,7 +25,7 @@ function ServicesTab({ lightMode }) {
                     </div>
                     <div className="text">
                       <p>Tu visión y objetivos son el corazón de cada decisión que tomamos. A través de la comunicación abierta y la colaboración, damos vida a tus ideas, 
-                        asegurando que tu perspectiva única moldee el resultado.</p>
+                        asegurando que tu perspectiva sea lo que moldee el resultado.</p>
                     </div>
                     <Link href="/dark/page-services" className="mt-30">
                       <span className="mr-15">Read More</span>
@@ -37,7 +37,7 @@ function ServicesTab({ lightMode }) {
               <div className="tab-content" id="tabs-2">
                 <div className="item">
                   <div className="img">
-                  <img src={`${prefix}//${lightMode ? 'light' : 'dark'}/assets/imgs/landing/pilares.jpg`} alt="" />
+                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/services/2.jpg`} alt="" />
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-60 mb-40">
@@ -56,7 +56,7 @@ function ServicesTab({ lightMode }) {
               <div className="tab-content" id="tabs-3">
                 <div className="item">
                   <div className="img">
-                  <img src={`${prefix}//${lightMode ? 'light' : 'dark'}/assets/imgs/landing/pilares.jpg`} alt="" />
+                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/services/3.jpg`} alt="" />
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-60 mb-40">
@@ -75,7 +75,7 @@ function ServicesTab({ lightMode }) {
               <div className="tab-content" id="tabs-4">
                 <div className="item">
                   <div className="img">
-                  <img src={`${prefix}//${lightMode ? 'light' : 'dark'}/assets/imgs/landing/pilares.jpg`} alt="" />
+                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/services/1.jpg`} alt="" />
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-60 mb-40">
@@ -97,13 +97,13 @@ function ServicesTab({ lightMode }) {
             <div className="serv-tab-link tab-links full-width md-mb50">
               <div className="sec-lg-head mb-80">
                 <h6 className="dot-titl mb-15">Filosofía</h6>
-                <p>Tu éxito es nuestra meta final. Nuestras estrategias se basan en conocimientos impulsados por datos, asegurando que cada decisión contribuya a tu crecimiento y éxito. </p>
+                <p></p>
               </div>
               <ul className="rest">
-                <li className="item-link current mb-15" data-tab="tabs-1" onClick={openTab}><span>01</span>Asociación Colaborativa</li>
-                <li className="item-link mb-15" data-tab="tabs-2" onClick={openTab}><span>02</span>Innovación y Excelencia</li>
-                <li className="item-link mb-15" data-tab="tabs-3" onClick={openTab}><span>03</span>Enfoque Centrado en el Usuario</li>
-                <li className="item-link" data-tab="tabs-4" onClick={openTab}><span>04</span>Enfoque Orientado a Resultados</li>
+                <li className="item-link current mb-15" data-tab="tabs-1" onClick={openTab}><span>01</span>Foco en el cliente y Colaboración</li>
+                <li className="item-link mb-15" data-tab="tabs-2" onClick={openTab}><span>02</span>Innovación</li>
+                <li className="item-link mb-15" data-tab="tabs-3" onClick={openTab}><span>03</span>Transparencia</li>
+                <li className="item-link" data-tab="tabs-4" onClick={openTab}><span>04</span>Empoderamiento y Autonomia del cliente</li>
               </ul>
             </div>
           </div>

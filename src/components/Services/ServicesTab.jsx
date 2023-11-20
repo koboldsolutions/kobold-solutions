@@ -21,7 +21,7 @@ function ServicesTab({ lightMode }) {
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-60 mb-40">
-                      <img src={`${prefix}//${lightMode ? 'light' : 'dark'}/assets/imgs/icons/0.png`} alt="" />
+                      <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/icons/0.png`} alt="" />
                     </div>
                     <div className="text">
                       <p>Tu visión y objetivos son el corazón de cada decisión que tomamos. A través de la comunicación abierta y la colaboración, damos vida a tus ideas, 

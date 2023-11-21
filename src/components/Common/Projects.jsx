@@ -8,21 +8,39 @@ function Projects() {
         {
           "id": 1,
           "picture": `${prefix}/dark/assets/imgs/projects/tebanko.png`,
-          "name": "Tenth XR",
-          "position": "Technology Services"
+          "name": "Tebanko",
+          "position": "Servicios Fintech"
         },
         {
           "id": 2,
           "picture": `${prefix}/dark/assets/imgs/projects/tenth.png`,
-          "name": "Shopi Bolivia",
-          "position": "E-Commerce Platform"
+          "name": "Tenth XR",
+          "position": "Servicios de Realidad Virtual"
         },
         {
           "id": 3,
           "picture": `${prefix}/dark/assets/imgs/projects/shopiapp.png`,
-          "name": "TeBanko",
-          "position": "Finntech Services"
-        }
+          "name": "Shopi",
+          "position": "E-Commerce"
+        },
+        {
+          "id": 4,
+          "picture": `${prefix}/dark/assets/imgs/projects/tiluchiweb1.png`,
+          "name": "Tiluchi Records",
+          "position": "Record Label"
+        },
+        {
+          "id": 5,
+          "picture": `${prefix}/dark/assets/imgs/projects/smtsmwhr.png`,
+          "name": "Sometime, Somewhere",
+          "position": "Feature Documentary"
+        },
+        {
+          "id": 6,
+          "picture": `${prefix}/dark/assets/imgs/projects/tactoweb.png`,
+          "name": "Tacto Desarrolladores",
+          "position": "Bienes Raíces"
+        },
       ]);
   return (
     <section className="team-crev section-padding sub-bg">
@@ -44,8 +62,8 @@ function Projects() {
           {
             data.map((item) => (
               <div className="col-lg-4" key={item.id}>
-                <div className="swiper-slide mb-50">
-                  <div className="item">
+                <div className="swiper-slide mb-50 hover-project">
+                  <div className="item background-lights">
                     <div className="img">
                       <img src={item.picture} height="200px" alt="" />
                     </div>

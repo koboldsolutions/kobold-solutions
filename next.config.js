@@ -10,8 +10,8 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "css")],
   },
-  basePath: '/kobold-solutions',
-  assetPrefix: '/kobold-solutions'
+  basePath: '',
+  assetPrefix: ''
 }
 
 module.exports = nextConfig

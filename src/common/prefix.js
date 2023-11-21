@@ -1,2 +1,2 @@
-const prefix = '/kobold-solutions';
+const prefix = '';
 export default prefix;

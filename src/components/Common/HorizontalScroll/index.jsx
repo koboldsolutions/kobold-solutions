@@ -19,7 +19,7 @@ function HzScroll({ lightMode }) {
     
     useIsomorphicLayoutEffect(() => {
       if (document.body.clientWidth > 991) {
-        console.log("innerwidth document", document.body.clientWidth)
+        //console.log("innerwidth document", document.body.clientWidth)
         gsap.registerPlugin(ScrollTrigger);
         let sections = gsap.utils.toArray(".panel");
         gsap.to(sections, {

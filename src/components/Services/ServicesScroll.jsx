@@ -11,7 +11,7 @@ function ServicesScroll({ lightMode }) {
     const [data, setData] = useState([
         {
           "id": 1,
-          "image": `/assets/imgs/services/1.jpg`,
+          "image": `assets/imgs/services/1.jpg`,
           "number": "01.",
           "type": "Desarrollo de Soluciones Personalizadas de Software",
           "title": "Calidad en cada línea de código",
@@ -110,7 +110,7 @@ function ServicesScroll({ lightMode }) {
             <div className="left" id="sticky_item">
               {
                 data.map((item, index) => (
-                  <div id={`tab-${index + 1}`} className="img bg-img" data-background={`${prefix}/${lightMode ? '/light/' : '/dark/'}${item.image}`} key={index} />
+                  <div id={`tab-${index + 1}`} className="img bg-img" data-background={`${prefix}/dark/${item.image}`} key={index} />
                 ))
               }
             </div>

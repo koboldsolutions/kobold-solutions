@@ -17,7 +17,7 @@ function ServicesTab({ lightMode }) {
               <div className="tab-content current" id="tabs-1">
                 <div className="item">
                   <div className="img">
-                    <img src={`${prefix}//${lightMode ? 'light' : 'dark'}/assets/imgs/landing/pilares.jpg`} alt="" />
+                    <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/landing/pilares.jpg`} alt="" />
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-60 mb-40">

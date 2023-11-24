@@ -33,12 +33,12 @@ function ServicesScroll({ lightMode }) {
           "title": "Aumenta tus ventas ampliando tu presencia digital, te ayudamos a crear una experiencia armónica Omni-canal",
           "text": "Crea tu propio E-Commerce , adapta o integra ",
           "list-elements": [
-            "Ventas 24/7 los 360 dias del añ0 ",
-            "Gestión de invetario y pedidos eficiente",
+            "Ventas 24/7 los 365 dias del año ",
+            "Gestión de inventario y pedidos eficientes",
             "Conocimiento de tus clientes",
             "Reduce costos operativos",
             "Facilita la experiencia de tu cliente",
-            "Competí en el mercado actual"
+            "Compite en el mercado actual"
           ]
         },
         {

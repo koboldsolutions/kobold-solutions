@@ -1,17 +1,13 @@
-import '@/styles/globals.css'
+import '@/styles/globals.css';
 import Head from "next/head";
 import Script from "next/script";
 import "swiper/css";
-import '@/styles/globals.css';
 import prefix from '@/common/prefix';
+import { appWithTranslation } from 'next-i18next';
 
-
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page);
 
-
-
-  // Define the relative paths for your scripts
   const scriptPaths = [
     '/assets/js/plugins.js',
     '/assets/js/TweenMax.min.js',
@@ -20,8 +16,7 @@ export default function App({ Component, pageProps }) {
     '/assets/js/parallax.min.js',
     '/assets/js/splitting.min.js',
     '/assets/js/isotope.pkgd.min.js',
-    '/assets/js/scripts.js'
-    // Add more script paths as needed
+    '/assets/js/scripts.js',
   ];
 
   return getLayout(
@@ -34,20 +29,12 @@ export default function App({ Component, pageProps }) {
       <Component {...pageProps} />
 
       {scriptPaths.map((scriptPath, index) => (
-        <Script key={index} strategy="beforeInteractive" src={`${prefix}${scriptPath}`}></Script>
+        <Script key={index} strategy="beforeInteractive" src={`${prefix}${scriptPath}`} />
       ))}
 
-      {/* <Script strategy="beforeInteractive" src="/kobold-solutions/assets/js/plugins.js"></Script>
-      <Script strategy="beforeInteractive" src="/kobold-solutions/assets/js/TweenMax.min.js"></Script>
-      <Script strategy="beforeInteractive" src="/kobold-solutions/assets/js/charming.min.js"></Script>
-      <Script strategy="beforeInteractive" src="/kobold-solutions/assets/js/countdown.js"></Script>
-      <Script strategy="beforeInteractive" src="/kobold-solutions/assets/js/parallax.min.js"></Script>
-      
-      <Script strategy="beforeInteractive" src="/kobold-solutions/assets/js/splitting.min.js"></Script>
-      <Script strategy="beforeInteractive" src="/kobold-solutions/assets/js/isotope.pkgd.min.js"></Script>
-      <Script strategy="lazyOnload" src="/kobold-solutions/assets/js/scripts.js"></Script>  */}
-       {/* Add more scripts as needed */}
-       <Script strategy="lazyOnload" src={`${prefix}/assets/js/scripts.js`}></Script>
+      <Script strategy="lazyOnload" src={`${prefix}/assets/js/scripts.js`} />
     </>
   );
 }
+
+export default appWithTranslation(App);

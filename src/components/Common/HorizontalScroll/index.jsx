@@ -16,7 +16,26 @@ function HzScroll({ lightMode }) {
   ? useLayoutEffect 
   : useEffect;
 
-    
+  
+  useEffect(() => {
+    setTimeout(() => {
+      const projects = document.querySelector(".team-crev"); // Cambia la clase según tu HTML
+      if (!projects) {
+        console.log("⚠️ Projects desapareció del DOM");
+      } else {
+        console.log("✅ Projects sigue en el DOM");
+      }
+    }, 500);
+  }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      const projects = document.querySelector(".projects-container");
+      if (projects) {
+        console.log("Posición de Projects:", projects.getBoundingClientRect());
+      }
+    }, 500);
+  }, []);
+
     useIsomorphicLayoutEffect(() => {
       if (document.body.clientWidth > 991) {
         //console.log("innerwidth document", document.body.clientWidth)

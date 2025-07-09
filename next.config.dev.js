@@ -40,4 +40,6 @@ const nextConfig = {
   staticAssets: ['/assets/', '/dark/'],
 };
 
+
+
 module.exports = nextConfig;

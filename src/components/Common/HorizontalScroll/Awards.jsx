@@ -1,13 +1,13 @@
-import React from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useState, useEffect } from 'react';
+import { useTranslation } from 'next-i18next';
+
 
 const swiperOptions = {
   speed: 1000,
   slidesPerView: 4,
   spaceBetween: 0,
-  initialSlide: 0, 
+  initialSlide: 0,
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -23,56 +23,60 @@ const swiperOptions = {
     1024: {
       slidesPerView: 4,
     },
-  }
-}
+  },
+};
 
 function Awards({ lightMode }) {
+  const { t } = useTranslation('common');
   const [loadSwiper, setLoadSwiper] = useState(false);
-
-  const [data, setData] = useState([
-    {
-      "id": 1,
-      "title": "Investigación",
-      "text": "Nos sumergimos en tu visión y objetivos, realizando una investigación y comprendiendo tus necesidades, sin costo.",
-      "number": "1"
-    },
-    {
-      "id": 2,
-      "title": "Definición",
-      "text": " Nuestro equipo trabaja para dar vida a tu visión, transformando tus ideas en soluciones impactantes.",
-      "number": "2"
-    },
-    {
-      "id": 3,
-      "title": "Desarrollo",
-      "text": "Utilizamos tecnologías de vanguardia y las mejores prácticas de la industria para construir una solucion digital robusta. ",
-      "number": "3"
-    },
-    {
-      "id": 4,
-      "title": "Entrega",
-      "text": "Estamos presentes durante la entrega del proyecto y post entrega del proyecto. ",
-      "number": "4"
-    }
-  ]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    setLoadSwiper(true);
-  }, []);
+     {
+      setData([
+        {
+          id: 1,
+          title: t('process.investigation.title'),
+          text: t('process.investigation.text'),
+          number: '1',
+        },
+        {
+          id: 2,
+          title: t('process.definition.title'),
+          text: t('process.definition.text'),
+          number: '2',
+        },
+        {
+          id: 3,
+          title: t('process.development.title'),
+          text: t('process.development.text'),
+          number: '3',
+        },
+        {
+          id: 4,
+          title: t('process.delivery.title'),
+          text: t('process.delivery.text'),
+          number: '4',
+        },
+      ]);
+      setLoadSwiper(true);
+    }
+  }, [ t]);
 
+ 
 
   return (
     <div className="panel awards-list main-bg approach-carso">
-<div className="container">
+      <div className="container">
         <div className="sec-lg-head mb-80">
           <div className="row justify-content-center">
             <div className="col-lg-6 text-center">
-              <h6 className="dot-titl mb-15">Experiencia en software</h6>
-              <h3>Nuestro Proceso</h3>
+              <h6 className="dot-titl mb-15">{t('experience.software')}</h6>
+              <h3>{t('process.title')}</h3>
             </div>
           </div>
         </div>
-        <div className="swiper4">
+         <div className="swiper4">
           {
             loadSwiper &&
             <Swiper {...swiperOptions} id="content-carousel-container-unq-approch" className="swiper-container d-flex">
@@ -102,7 +106,7 @@ function Awards({ lightMode }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Awards;

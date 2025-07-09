@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 function ContactForm() {
+const { t, i18n, ready } = useTranslation('common');
+    // Estado para manejar si las traducciones están cargadas
+    const [translationsLoaded, setTranslationsLoaded] = useState(false);
+  
+    useEffect(() => {
+      // Verificamos que las traducciones se hayan cargado correctamente
+      if (ready) {
+        setTranslationsLoaded(true);
+      }
+    }, [ready]);
+  
+    if (!translationsLoaded) {
+     
+    }
+
+
   return (
     <section className="contact-crev section-padding">
       <div className="container">
         <div className="row">
           <div className="col-lg-5">
             <div className="sec-lg-head mb-80">
-              <h6 className="dot-titl mb-10">Contacto</h6>
-              <h2 className="fz-50">Despejamos<br /> tus dudas.</h2>
-              <p className="fz-15 mt-10">¿Listo para hacer realidad tu proyecto? Ya sea para colaborar o simplemente para charlar, ¡estamos aquí para escucharte!</p>
+              <h6 className="dot-titl mb-10">{t('contact-form.title')}</h6>
+              <h2 className="fz-50">{t('contact-form.slogan')}<br /> {t('contact-form.slogan2')}</h2>
+              <p className="fz-15 mt-10">{t('contact-form.description')}</p>
               <div className="phone fz-30 fw-600 mt-30 underline">
                 <Link target="_blank" href="https://wa.me/59175521925?text=Estoy%20interesado%20en%20sus%20servicios%20de%20Tecnologia!">+591 755 21 925</Link>
               </div>

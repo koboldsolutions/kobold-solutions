@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect, useState  } from 'react';
 import Link from 'next/link';
 import prefix from '@/common/prefix';
+import { useTranslation } from 'next-i18next';
+
 function Intro({ lightMode }) {
+  const { t } = useTranslation('common'); // `ready` indica si las traducciones están cargadas
+  
+  
+   
+   
   return (
     <section className="about section-padding main-bg">
       <div className="container ontop">
@@ -13,7 +20,7 @@ function Intro({ lightMode }) {
                   <svg className="textcircle" viewBox="0 0 500 500">
                     <defs><path id="textcircle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path></defs>
                     <text>
-                      <textPath xlinkHref="#textcircle" textLength="900"> A g e n c i a     D I G I T A L - A g e n c i a     A G E N C I A- </textPath>
+                      <textPath xlinkHref="#textcircle" textLength="900">  {t('circle-two')} </textPath>
                     </text>
                   </svg>
                 </div>
@@ -25,14 +32,14 @@ function Intro({ lightMode }) {
           </div>
           <div className="col-lg-7 valign">
             <div className="cont sec-lg-head">
-              <h6 className="dot-titl mb-20">Nuestra Agencia Digital</h6>
+              <h6 className="dot-titl mb-20">{t('nuestro')}</h6>
               <h2 className="d-slideup wow">
-                <span className="sideup-text"><span className="">Digitaliza tu negocio</span></span>
+                <span className="sideup-text"><span className="">{t('digitaliza')}</span></span>
               </h2>
               <div className="row">
                 <div className="col-lg-12">
                   <div className="text mt-20">
-                    <p>Desarrollamos soluciones personalizadas y diseños visionarios. Creemos en entregar soluciones tecnologicas que permiten que los usarios sean independientes</p>
+                    <p>{t('text-1')}</p>
                   </div>
                   
                   <div className="underline">
@@ -58,11 +65,10 @@ function Intro({ lightMode }) {
                   </div>
                 </div>
                 <div>
-                  <h6>Desarrollo de Software a Medida</h6>
+                  <h6>{t('custom')}</h6>
                 </div>
               </div>
-              <p className="fz-14">Damos vida a tus ideas, diseñando y construyendo soluciones 
-              digitales desde la concepción hasta la implementación final. </p>
+              <p className="fz-14">{t('p-custom')} </p>
               {/* Mandar directo al formulario */}
                 <Link href="/services" className="arrow mt-40">
                   <span className="circle">
@@ -73,7 +79,7 @@ function Intro({ lightMode }) {
                         fill="currentColor"></path>
                     </svg>
                   </span>
-                  <span className="fz-12 text-u ml-10">Ver Más</span>
+                  <span className="fz-12 text-u ml-10">{t('see-more')}</span>
                 </Link>
             </div>
           </div>
@@ -89,7 +95,7 @@ function Intro({ lightMode }) {
                   <h6>E-Commerce</h6>
                 </div>
               </div>
-              <p className="fz-14">Transformamos tu visión en experiencias de compra. Creamos experiencias simples y emotivas que unen los objetivos de tu empresa con una excelente experiencia de compra.</p>
+              <p className="fz-14">{t('p-ecommerce')}</p>
                 <Link href="/services" className="arrow mt-40">
                   <span className="circle">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -99,7 +105,7 @@ function Intro({ lightMode }) {
                         fill="currentColor"></path>
                     </svg>
                   </span>
-                  <span className="fz-12 text-u ml-10">Ver Más</span>
+                  <span className="fz-12 text-u ml-10">{t('see-more')}</span>
                 </Link>
             </div>
           </div>
@@ -112,10 +118,10 @@ function Intro({ lightMode }) {
                   </div>
                 </div>
                 <div>
-                  <h6>Consultoría de Software</h6>
+                  <h6>{t('consulting')}</h6>
                 </div>
               </div>
-              <p className="fz-14">Compartimos nuestro conocimiento y experiencias para ayudarte a realizar tu siguiente paso</p>
+              <p className="fz-14">{t('p-consulting')}</p>
                 <Link href="/services" className="arrow mt-40">
                   <span className="circle">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -125,7 +131,7 @@ function Intro({ lightMode }) {
                         fill="currentColor"></path>
                     </svg>
                   </span>
-                  <span className="fz-12 text-u ml-10">Ver Más</span>
+                  <span className="fz-12 text-u ml-10">{t('see-more')}</span>
                 </Link>
             </div>
           </div>

@@ -7,7 +7,7 @@ import prefix from '@/common/prefix';
 import TWEEN from '@tweenjs/tween.js'
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import {EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
-import { UnrealBloomPass } from "three/examples/jsm/postprocessing//UnrealBloomPass";
+import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
 
 
 const CubeComponent = () => {

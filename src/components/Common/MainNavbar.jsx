@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import prefix from '@/common/prefix';
+import LanguageSwitcher from '@/components/Language/LanguageSwitcher';
 
 function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
-
-  const imagePath = `${prefix}/dark/assets/imgs/koboldlogo.png`;
-
-  useEffect(() => {
+  const { t } = useTranslation('common');
+ 
+ useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -48,37 +49,49 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
     else closeBtn.style.display = 'none';
   }
 
+  const imagePath = `${prefix}/dark/assets/imgs/koboldlogo.png`;
+
+  
+
   return (
     <nav className={`navbar navbar-expand-lg ${curve ? 'nav-crev' : ''} ${noStatic ? '' : 'static'} ${mainBg ? 'main-bg' : ''} ${subBg ? 'sub-bg' : ''}`}>
       <div className="container">
         <Link className="logo icon-img-170" href="/">
           <img src={imagePath} alt="logo" />
-
         </Link>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={toggleNavbar}>
+       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={toggleNavbar}>
           <span className="icon-bar"><i className="fas fa-bars"></i></span>
         </button>
-
         <div className="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
           <ul className="navbar-nav">
-            
             <li className="nav-item">
-              <Link className="nav-link" href="/"><span className="rolling-text">Inicio</span></Link>
+              <Link className="nav-link" href="/">
+                <span className="rolling-text" suppressHydrationWarning>{t('mainNavbar.home')}</span>
+              </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/services"><span className="rolling-text">Servicios</span></Link>
+              <Link className="nav-link" href="/services">
+                <span className="rolling-text" suppressHydrationWarning>{t('mainNavbar.services')}</span>
+              </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/blogs"><span className="rolling-text">Blog</span></Link>
+              <Link className="nav-link" href="/blogs">
+                <span className="rolling-text" suppressHydrationWarning>{t('mainNavbar.blog')}</span>
+              </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/contact"><span className="rolling-text">Contacto</span></Link>
+              <Link className="nav-link" href="/contact">
+                <span className="rolling-text" suppressHydrationWarning>{t('mainNavbar.contact')}</span>
+              </Link>
+            </li>
+            <li className="nav-item " >
+              <LanguageSwitcher />
             </li>
           </ul>
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
-export default MainNavbar
+export default MainNavbar;

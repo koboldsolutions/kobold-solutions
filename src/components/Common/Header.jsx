@@ -1,18 +1,35 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useState  } from 'react';
 //= Scripts
+
 import loadBackgroudImages from '@/common/loadBackgroudImages';
 import CubeComponent from './Three/CubeComponent';
+import { useTranslation } from 'next-i18next';
+
 import IdeasText from './Three/IdeasText';
 import prefix
  from '@/common/prefix';
-const useIsomorphicLayoutEffect = typeof window !== "undefined" 
-? useLayoutEffect 
-: useEffect;
+ const useIsomorphicLayoutEffect = typeof window !== "undefined" 
+ ? useLayoutEffect 
+ : useEffect;
 
 function Header({ lightMode }) {
-  useIsomorphicLayoutEffect(() => {
-    loadBackgroudImages();
-  }, []);
+ const { t, i18n} = useTranslation('common'); // `ready` indica si las traducciones están cargadas
+ const [isMounted, setIsMounted] = useState(false);
+
+useEffect(() => {
+  setIsMounted(true);
+}, []);
+
+ useIsomorphicLayoutEffect(() => {
+    {
+     loadBackgroudImages();
+   }
+ }, []);
+
+ 
+ 
+ console.log('Idioma actual:', i18n.language);
+ console.log('Texto de bienvenida:', t('welcome'));
 
   
 
@@ -21,6 +38,7 @@ function Header({ lightMode }) {
     <header className="header-creative">
 
       <div className="container ontop">
+      
       <div className="img parallax" data-speed="0.01">
         
       </div>
@@ -43,10 +61,10 @@ function Header({ lightMode }) {
               <CubeComponent className="threecube" />
                
       
-              <h4 className="fw-300 mb-15 ">Diseñando tu Futuro Digital</h4>
+              <h4 className="fw-300 mb-15 ">{isMounted ? t('design') : 'Diseñando tu Futuro Digital'}</h4>
               <h1 className="fw-600 d-rotate wow">
-                <span className="rotate-text">Soluciones web</span>
-                <span className="rotate-text"> a tu medida</span>
+                <span className="rotate-text">{isMounted ? t('web') : 'Diseñando tu Futuro Digital'} </span>
+                <span className="rotate-text">{isMounted ? t('web2') : 'Diseñando tu Futuro Digital'}</span>
               </h1>
               <div className="text-center hover-this mb-10">
                 <div className="circle-button hover-anim">
@@ -59,7 +77,7 @@ function Header({ lightMode }) {
                       </defs>
                       <text>
                       
-                        <textPath xlinkHref="#textcircle1" textLength="900">Websites - Mobile - eCommerce - Consultorias -</textPath>
+                        <textPath xlinkHref="#textcircle1" textLength="900">{t('circle')}</textPath>
                       </text>
                     </svg>
                   </div>

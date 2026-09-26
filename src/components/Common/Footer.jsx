@@ -28,7 +28,7 @@ export default function Footer() {
             <Link href="/" className="ks-footer__brand" aria-label="Kobold Solutions">
               <img src={`${prefix}/dark/assets/imgs/koboldlogo.png`} alt="Kobold Solutions" />
             </Link>
-            <p className="ks-copy">{t('design')}</p>
+            <p className="ks-copy">{t('footer.tagline')}</p>
           </div>
           <div>
             <h2 className="ks-label">{t('footer.address')}</h2>

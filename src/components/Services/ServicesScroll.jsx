@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 //= Scripts
 import loadBackgroudImages from '@/common/loadBackgroudImages';
 import isInView from '@/common/isInView';
 import prefix from '@/common/prefix';
+import { services } from '@/common/services';
 
 function ServicesScroll({ lightMode }) {
-  const { t, i18ny } = useTranslation('common'); // Usar el hook de traducción
+  const { t } = useTranslation('common'); // Usar el hook de traducción
   
   // Verificar si las traducciones están listas
 
@@ -68,57 +69,15 @@ function ServicesScroll({ lightMode }) {
 
  
 
-  // Datos de servicios (traducción de ejemplo)
-  const data = [
-    {
-      "id": 1,
-      "image": `assets/imgs/services/1.jpg`,
-      "number": "01.",
-      "type": t('services-page.type1'),
-      "title": t('services-page.title1'),
-      "text": t('services-page.text1'),
-      "list-elements": [
-        t('services-page.listItem1'),
-        t('services-page.listItem2'),
-        t('services-page.listItem3'),
-        t('services-page.listItem4'),
-        t('services-page.listItem5'),
-        t('services-page.listItem6')
-      ]
-    },
-    {
-      "id": 2,
-      "image": `/assets/imgs/services/2.jpg`,
-      "number": "02.",
-      "type": t('services-page.type2'),
-      "title": t('services-page.title2'),
-      "text": t('services-page.text2'),
-      "list-elements": [
-        t('services-page.list2Item1'),
-        t('services-page.list2Item2'),
-        t('services-page.list2Item3'),
-        t('services-page.list2Item4'),
-        t('services-page.list2Item5'),
-        t('services-page.list2Item6')
-      ]
-    },
-    {
-      "id": 3,
-      "image": `/assets/imgs/services/3.jpg`,
-      "number": "03.",
-      "type": t('services-page.type3'),
-      "title": t('services-page.title3'),
-      "text": t('services-page.text3'),
-      "list-elements": [
-        t('services-page.list3Item1'),
-        t('services-page.list3Item2'),
-        t('services-page.list3Item3'),
-        t('services-page.list3Item4'),
-        t('services-page.list3Item5'),
-        t('services-page.list3Item6')
-      ]
-    }
-  ];
+  const data = services.map(({ id, image }, index) => ({
+    id,
+    image,
+    number: `${String(index + 1).padStart(2, '0')}.`,
+    type: t(`offerings.${id}.title`),
+    title: t(`offerings.${id}.heading`),
+    text: t(`offerings.${id}.description`),
+    capabilities: t(`offerings.${id}.capabilities`, { returnObjects: true }),
+  }));
 
   return (
     <section className="portfolio-fixed">
@@ -128,7 +87,7 @@ function ServicesScroll({ lightMode }) {
             <div className="left" id="sticky_item">
               {
                 data.map((item, index) => (
-                  <div id={`tab-${index + 1}`} className="img bg-img" data-background={`${prefix}/dark/${item.image}`} key={index} />
+                  <div id={`tab-${index + 1}`} className="img bg-img" data-background={`${prefix}/dark/assets/imgs/services/${item.image}`} key={index} />
                 ))
               }
             </div>
@@ -136,15 +95,15 @@ function ServicesScroll({ lightMode }) {
           <div className="col-lg-6 sub-bg right">
             {
               data.map((item, index) => (
-                <div className={`cont ${index === 0 ? 'active' : ''}`} data-tab={`tab-${index + 1}`} key={index}>
+                <div id={item.id} className={`cont ${index === 0 ? 'active' : ''}`} data-tab={`tab-${index + 1}`} key={index}>
 
                   <span className="ks-label mb-15">{item.number} {item.type}</span>
-                  <h2 className="ks-heading mb-15">{item.title}.</h2>
+                  <h2 className="ks-heading mb-15">{item.title}</h2>
                   <div className="row justify-content-center">
                     <div className="col-md-11">
-                      <p className="ks-copy">{item.text}.</p>
+                      <p className="ks-copy">{item.text}</p>
                       <ul className="rest list-arrow mt-30">
-                        {item["list-elements"].map((element, idx) => (
+                        {item.capabilities.map((element, idx) => (
                           <li key={idx}>
                                   <div
                                     style={{

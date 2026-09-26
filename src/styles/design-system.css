@@ -149,3 +149,5 @@
   .ks-footer__grid { grid-template-columns: 1fr; padding-top: 48px; padding-bottom: 40px; }
 }
 @media (prefers-reduced-motion: reduce) { .ks-site .ks-button { transition: none; } }
+
+.ks-site .portfolio-fixed .cont[id] { scroll-margin-top: 90px; }

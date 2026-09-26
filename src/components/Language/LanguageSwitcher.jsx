@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { supportedLanguages } from '@/common/i18n';
+import { defaultLanguage, supportedLanguages } from '@/common/i18n';
 
 const languageNames = { es: 'Español', en: 'English' };
 
 function LanguageSwitcher() {
   const { i18n } = useTranslation('common');
-  const selectedLocale = i18n.resolvedLanguage || 'es';
+  const selectedLocale = i18n.resolvedLanguage || defaultLanguage;
 
   const handleLanguageChange = (lng) => {
     if (lng === selectedLocale) return;

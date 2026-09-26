@@ -28,9 +28,9 @@ function Projects() {
     },
     {
       id: 4,
-      picture: `${prefix}/dark/assets/imgs/projects/tiluchiweb1.png`,
-      name: 'Tiluchi Records',
-      position: 'Record Label',
+      picture: `${prefix}/dark/assets/imgs/projects/exomad1.png`,
+      name: 'Exomad Green',
+      position: 'Carbon Offset Platform',
     },
     {
       id: 5,

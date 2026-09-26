@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import MarketingMeta from '@/components/Common/MarketingMeta';
 import Navbar from '@/components/Common/MainNavbar';
 import Layout from '@/layouts/default';
 import Loader from '@/components/Common/Loader';
@@ -38,9 +38,7 @@ export default function Home(props) {
 
   return (
     <>
-      <Head>
-        <title>Kobold Solutions</title>
-      </Head>
+      <MarketingMeta page="home" />
       <Loader />
       <Navbar mainBg />
       <main className="main-bg position-re ks-site">

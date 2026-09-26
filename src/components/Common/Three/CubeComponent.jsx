@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import prefix from '@/common/prefix';
 import styles from './CubeComponent.module.css';
 
-const services = ['web', 'commerce', 'software'];
+import { services } from '@/common/services';
 
 // Small solid models share the cube's green palette and need no external assets.
 function createServiceObjects() {
@@ -40,16 +40,15 @@ function createServiceObjects() {
     addBox(browser, [index === 2 ? 0.23 : 0.4, 0.035, 0.035], [0.1, y, 0.13], white);
   });
 
-  const bag = new THREE.Group();
-  const bagBody = addBox(bag, [0.68, 0.72, 0.32], [0, -0.1, 0], dark);
-  const outline = new THREE.LineSegments(new THREE.EdgesGeometry(bagBody.geometry), new THREE.LineBasicMaterial({ color: 0x63eb99 }));
-  outline.position.y = -0.1;
-  bag.add(outline);
-  const handle = new THREE.Mesh(new THREE.TorusGeometry(0.19, 0.038, 10, 28, Math.PI), green);
-  handle.position.set(0, 0.26, 0);
-  bag.add(handle);
-  connect(bag, [-0.13, -0.08, 0.18], [-0.02, -0.19, 0.18]);
-  connect(bag, [-0.02, -0.19, 0.18], [0.17, 0.04, 0.18]);
+  const diagnostic = new THREE.Group();
+  addBox(diagnostic, [0.82, 0.9, 0.16], [0, 0, 0], green);
+  addBox(diagnostic, [0.72, 0.8, 0.04], [0, 0, 0.1], dark);
+  [-0.22, 0, 0.22].forEach((x, index) => {
+    const height = [0.2, 0.38, 0.55][index];
+    addBox(diagnostic, [0.1, height, 0.04], [x, -0.29 + height / 2, 0.14], index === 2 ? white : green);
+  });
+  connect(diagnostic, [-0.29, 0.29, 0.14], [-0.2, 0.21, 0.14]);
+  connect(diagnostic, [-0.2, 0.21, 0.14], [-0.06, 0.35, 0.14]);
 
   const network = new THREE.Group();
   const points = [[0, 0, 0.12], [-0.42, 0.3, 0], [0.42, 0.3, 0], [-0.35, -0.35, 0], [0.35, -0.35, 0]];
@@ -59,7 +58,8 @@ function createServiceObjects() {
     network.add(node);
     if (index) connect(network, points[0], point);
   });
-  return [browser, bag, network];
+  const models = { development: browser, consulting: diagnostic, ai: network };
+  return services.map(({ id }) => models[id]);
 }
 
 export default function CubeComponent() {
@@ -223,11 +223,12 @@ export default function CubeComponent() {
     <div className={styles.experience}>
       <div ref={stageRef} className={`${styles.stage} ${available ? styles.ready : ''}`} role="group" aria-label={t('orbit.title')}>
         {!available && <div className={styles.fallback} style={{ backgroundImage: `url(${prefix}/dark/assets/imgs/koboldlogo02.png)` }} />}
-        {services.map((service, index) => (
+        {services.map(({ id: service }, index) => (
           <button
             key={service}
             ref={(element) => { buttonsRef.current[index] = element; }}
             type="button"
+            data-service={service}
             className={`${styles.service} ${active === index ? styles.active : ''}`}
             aria-label={t(`orbit.${service}.title`)}
             aria-pressed={selected === index}
@@ -251,8 +252,8 @@ export default function CubeComponent() {
       </div>
       <div className={styles.caption} aria-live="polite" aria-atomic="true">
         {active === null ? <span className={styles.hint}>{t('orbit.hint')}</span> : <>
-          <strong>{t(`orbit.${services[active]}.title`)}</strong>
-          <span>{t(`orbit.${services[active]}.description`)}</span>
+          <strong>{t(`orbit.${services[active].id}.title`)}</strong>
+          <span>{t(`orbit.${services[active].id}.description`)}</span>
         </>}
       </div>
       {available && <button type="button" className={styles.motion} aria-pressed={paused} onClick={() => setPaused(!paused)}>

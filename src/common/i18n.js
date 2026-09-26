@@ -4,15 +4,16 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import en from '../../public/locales/en/common.json';
 import es from '../../public/locales/es/common.json';
 
-export const supportedLanguages = ['es', 'en'];
+export const defaultLanguage = 'en';
+export const supportedLanguages = ['en', 'es'];
 
 // Bundled dictionaries also work on GitHub Pages without translation fetches.
 // Keep export and initial browser render identical; restore preferences on mount.
 if (!i18n.isInitialized) {
   i18n.use(initReactI18next).init({
     resources: { en: { common: en }, es: { common: es } },
-    lng: 'es',
-    fallbackLng: 'es',
+    lng: defaultLanguage,
+    fallbackLng: defaultLanguage,
     supportedLngs: supportedLanguages,
     load: 'languageOnly',
     ns: ['common'],
@@ -40,7 +41,7 @@ export function restoreBrowserLanguage() {
   const language = candidates
     .filter((value) => typeof value === 'string')
     .map((value) => value.toLowerCase().split('-')[0])
-    .find((value) => supportedLanguages.includes(value)) || 'es';
+    .find((value) => supportedLanguages.includes(value)) || defaultLanguage;
 
   const persistLanguage = (lng) => {
     detector.cacheUserLanguage(lng);

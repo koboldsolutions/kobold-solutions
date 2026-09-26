@@ -25,10 +25,10 @@ export default function Header({ lightMode }) {
           <CubeComponent />
         </div>
         <div className={styles.content}>
-          <p className={`ks-label ${styles.eyebrow}`}>{t('design')}</p>
+          <p className={`ks-label ${styles.eyebrow}`}>{t('hero.eyebrow')}</p>
           <h1 className={`ks-display ${styles.title}`}>
-            <span>{t('web')}</span>
-            <span className="ks-accent">{t('web2')}<span className={styles.period}>.</span></span>
+            <span>{t('hero.title')}</span>
+            <span className="ks-accent">{t('hero.accent')}</span>
           </h1>
           <p className={`ks-copy ${styles.description}`}>{t('hero.description')}</p>
           <div className={styles.actions}>

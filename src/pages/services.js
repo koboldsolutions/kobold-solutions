@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 //= Packages
-import Head from 'next/head';
+import MarketingMeta from '@/components/Common/MarketingMeta';
 //= Layout
 import Layout from '@/layouts/default';
 //= Components
@@ -30,9 +30,7 @@ function PageServices() {
 
   return (
     <>
-      <Head>
-        <title>Kobold Solutions - Services</title>
-      </Head>
+      <MarketingMeta page="services" />
 
       <Loader />
       <Navbar mainBg />

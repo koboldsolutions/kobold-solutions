@@ -19,8 +19,13 @@ if (!i18n.isInitialized) {
     defaultNS: 'common',
     initImmediate: false,
     interpolation: { escapeValue: false },
-    react: { useSuspense: false },
+    react: { useSuspense: false, bindI18nStore: 'added' },
   });
+} else {
+  // Fast Refresh preserves the instance; refresh its bundled copy as JSON changes.
+  // Do not reinitialize: that would reset the visitor's selected language.
+  i18n.addResourceBundle('en', 'common', en, true, true);
+  i18n.addResourceBundle('es', 'common', es, true, true);
 }
 
 export function restoreBrowserLanguage() {

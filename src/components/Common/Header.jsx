@@ -1,121 +1,54 @@
-import React, { useEffect, useLayoutEffect, useState  } from 'react';
-//= Scripts
-
-import loadBackgroudImages from '@/common/loadBackgroudImages';
-import CubeComponent from './Three/CubeComponent';
+import { useId } from 'react';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import ActionLink from './ActionLink';
+import CubeComponent from './Three/CubeComponent';
+import prefix from '@/common/prefix';
+import styles from './Header.module.css';
 
-import IdeasText from './Three/IdeasText';
-import prefix
- from '@/common/prefix';
- const useIsomorphicLayoutEffect = typeof window !== "undefined" 
- ? useLayoutEffect 
- : useEffect;
+function Arrow({ diagonal = false }) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d={diagonal ? 'M6 18 18 6M6 6h12v12' : 'M4 12h15m-6-6 6 6-6 6'} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
-function Header({ lightMode }) {
- const { t, i18n} = useTranslation('common'); // `ready` indica si las traducciones están cargadas
- const [isMounted, setIsMounted] = useState(false);
-
-useEffect(() => {
-  setIsMounted(true);
-}, []);
-
- useIsomorphicLayoutEffect(() => {
-    {
-     loadBackgroudImages();
-   }
- }, []);
-
- 
- 
- console.log('Idioma actual:', i18n.language);
- console.log('Texto de bienvenida:', t('welcome'));
-
-  
+export default function Header({ lightMode }) {
+  const { t } = useTranslation('common');
+  const circleId = useId();
 
   return (
-    
-    <header className="header-creative">
-
+    <header className={`header-creative ${styles.hero}`}>
       <div className="container ontop">
-      
-      <div className="img parallax" data-speed="0.01">
-        
-      </div>
-      
-        <div className="row justify-content-center">
-          <div className="col-lg-3 d-flex align-items-start">
-          
-          
-            <div className="img md-hide">
-            
-              {/* <div className="img-assets1 parallax" data-speed="-0.01">
-                <img src="/dark/assets/imgs/svg-assets/claw.svg" alt="" />
-              </div> */}
-
-            </div>
-          </div>
-          <div className="col-lg-6 valign">
-            <div className="caption text-center full-width md-mb50">
-      
-              <CubeComponent className="threecube" />
-               
-      
-              <h4 className="fw-300 mb-15 ">{isMounted ? t('design') : 'Diseñando tu Futuro Digital'}</h4>
-              <h1 className="fw-600 d-rotate wow">
-                <span className="rotate-text">{isMounted ? t('web') : 'Diseñando tu Futuro Digital'} </span>
-                <span className="rotate-text">{isMounted ? t('web2') : 'Diseñando tu Futuro Digital'}</span>
-              </h1>
-              <div className="text-center hover-this mb-10">
-                <div className="circle-button hover-anim">
-                  <div className="rotate-circle fz-30 text-u">
-                    <svg className="textcircle" viewBox="0 0 500 500">
-                      <defs>
-                        <path id="textcircle1"
-                          d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z">
-                        </path>
-                      </defs>
-                      <text>
-                      
-                        <textPath xlinkHref="#textcircle1" textLength="900">{t('circle')}</textPath>
-                      </text>
-                    </svg>
-                  </div>
-                  <div className="in-circle text-center starfx">
-                  <svg className="svg-animation star "  width="100" height="100" viewBox="0 0 100 100"
-                  fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                  <line y1="50" x2="100" y2="50" vectorEffect="non-scaling-stroke"
-                    stroke="currentColor" style={{ "--index": 1, "--transform": '30deg' }}></line>
-                  <line y1="50" x2="100" y2="50" vectorEffect="non-scaling-stroke"
-                    stroke="currentColor" style={{ "--index": 2, "--transform": '60deg' }}></line>
-                  <line y1="50" x2="100" y2="50" vectorEffect="non-scaling-stroke"
-                    stroke="currentColor" style={{ "--index": 3, "--transform": '90deg' }}></line>
-                  <line y1="50" x2="100" y2="50" vectorEffect="non-scaling-stroke"
-                    stroke="currentColor" style={{ "--index": 4, "--transform": '120deg' }}></line>
-                  <line y1="50" x2="100" y2="50" vectorEffect="non-scaling-stroke"
-                    stroke="currentColor" style={{ "--index": 5, "--transform": '150deg' }}></line>
-                  <line y1="50" x2="100" y2="50" vectorEffect="non-scaling-stroke"
-                    stroke="currentColor" style={{ "--index": 6, "--transform": '180deg' }}></line>
+        <div className={styles.scene}>
+          <CubeComponent />
+        </div>
+        <div className={styles.content}>
+          <p className={`ks-label ${styles.eyebrow}`}>{t('design')}</p>
+          <h1 className={`ks-display ${styles.title}`}>
+            <span>{t('web')}</span>
+            <span className="ks-accent">{t('web2')}<span className={styles.period}>.</span></span>
+          </h1>
+          <p className={`ks-copy ${styles.description}`}>{t('hero.description')}</p>
+          <div className={styles.actions}>
+            <ActionLink href="/contact">{t('hero.contact')}</ActionLink>
+            <Link href="/services" className={styles.services}>
+              <span className={styles.circle} aria-hidden="true">
+                <svg className={styles.ring} viewBox="0 0 160 160">
+                  <defs>
+                    <path id={circleId} d="M80,18a62,62 0 1,1 0,124a62,62 0 1,1 0,-124" />
+                  </defs>
+                  <text><textPath href={`#${circleId}`} textLength="380" lengthAdjust="spacing">{t('circle')}</textPath></text>
                 </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            
-          </div>
-          <div className="col-lg-3">
-            
-            <div className="mt-30 md-hide">
-            
-             
-            </div>
+                <span className={styles.circleCenter}><Arrow /></span>
+              </span>
+              <span className={styles.servicesLabel}>{t('hero.services')}</span>
+            </Link>
           </div>
         </div>
       </div>
-      <div className="bg-pattern bg-img" data-background={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/patterns/graph.png`}></div>
+      <div className="bg-pattern bg-img" style={{ backgroundImage: `url(${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/patterns/graph.png)` }} />
     </header>
-  )
+  );
 }
-
-export default Header

@@ -138,11 +138,11 @@ function ServicesScroll({ lightMode }) {
               data.map((item, index) => (
                 <div className={`cont ${index === 0 ? 'active' : ''}`} data-tab={`tab-${index + 1}`} key={index}>
 
-                  <span className="sub-title mb-15">{item.number} {item.type}</span>
-                  <h2 className="mb-15">{item.title}.</h2>
+                  <span className="ks-label mb-15">{item.number} {item.type}</span>
+                  <h2 className="ks-heading mb-15">{item.title}.</h2>
                   <div className="row justify-content-center">
                     <div className="col-md-11">
-                      <p>{item.text}.</p>
+                      <p className="ks-copy">{item.text}.</p>
                       <ul className="rest list-arrow mt-30">
                         {item["list-elements"].map((element, idx) => (
                           <li key={idx}>

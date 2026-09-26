@@ -42,13 +42,13 @@ function ServicesSection({ lightMode }) {
           <div className="row">
             <div className="col-lg-8">
               <div className="position-re">
-                <h6 className="dot-titl mb-10">{t('services-page2.title')}</h6>
-                <h2 className="fz-60 fw-700">{t('services-page2.mainTitle')}</h2>
+                <h6 className="ks-label mb-10">{t('services-page2.title')}</h6>
+                <h2 className="ks-heading">{t('services-page2.mainTitle')}</h2>
               </div>
             </div>
             <div className="col-lg-4 d-flex align-items-center">
               <div className="text">
-                <p></p>
+                <p className="ks-copy"></p>
               </div>
             </div>
           </div>
@@ -63,10 +63,10 @@ function ServicesSection({ lightMode }) {
                     alt=""
                   />
                 </div>
-                <h5 className="mb-30 pb-30 bord-thin-bottom">
+                <h3 className="ks-card-title mb-30 pb-30 bord-thin-bottom">
                   <StatementSplitter statement={item.title} />
-                </h5>
-                <p>{item.text}</p>
+                </h3>
+                <p className="ks-copy">{item.text}</p>
               </div>
             </div>
           ))}

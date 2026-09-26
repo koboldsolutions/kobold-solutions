@@ -71,8 +71,8 @@ function Awards({ lightMode }) {
         <div className="sec-lg-head mb-80">
           <div className="row justify-content-center">
             <div className="col-lg-6 text-center">
-              <h6 className="dot-titl mb-15">{t('experience.software')}</h6>
-              <h3>{t('process.title')}</h3>
+              <h6 className="ks-label mb-15">{t('experience.software')}</h6>
+              <h2 className="ks-heading">{t('process.title')}</h2>
             </div>
           </div>
         </div>
@@ -84,9 +84,9 @@ function Awards({ lightMode }) {
                 data.map((item) => (
                   <SwiperSlide key={item.id}>
                     <div className="item text-center">
-                      <h6>{item.title}</h6>
+                      <h3 className="ks-card-title">{item.title}</h3>
                       <h2 className="fz-60 stroke num-font mt-30">{item.number}</h2>
-                      <p className="fz-14 mt-30">{item.text}</p>
+                      <p className="ks-copy mt-30">{item.text}</p>
          
                         <span className="mt-15">
                           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"

@@ -31,9 +31,9 @@ function ServicesTab({ lightMode }) {
                       <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/icons/0.png`} alt="" />
                     </div>
                     <div className="text">
-                      <p suppressHydrationWarning>{t('services-tab.service1Text')}</p>  {/* Usar t() para traducir el texto */}
+                      <p className="ks-copy" suppressHydrationWarning>{t('services-tab.service1Text')}</p>  {/* Usar t() para traducir el texto */}
                     </div>
-                    <Link href="/dark/page-services" className="mt-30">
+                    <Link href="/dark/page-services" className="ks-text-link mt-30">
                       <span className="mr-15" suppressHydrationWarning>{t('services-tab.readMore')}</span>  {/* Traducir "Read More" */}
                       <i className="fas fa-long-arrow-alt-right"></i>
                     </Link>
@@ -50,9 +50,9 @@ function ServicesTab({ lightMode }) {
                       <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/icons/1.png`} alt="" />
                     </div>
                     <div className="text">
-                      <p suppressHydrationWarning>{t('services-tab.service2Text')}</p>  {/* Usar t() para traducir el texto */}
+                      <p className="ks-copy" suppressHydrationWarning>{t('services-tab.service2Text')}</p>  {/* Usar t() para traducir el texto */}
                     </div>
-                    <Link href="/dark/page-services" className="mt-30">
+                    <Link href="/dark/page-services" className="ks-text-link mt-30">
                       <span className="mr-15" suppressHydrationWarning>{t('services-tab.readMore')}</span>
                       <i className="fas fa-long-arrow-alt-right"></i>
                     </Link>
@@ -69,9 +69,9 @@ function ServicesTab({ lightMode }) {
                       <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/icons/2.png`} alt="" />
                     </div>
                     <div className="text">
-                      <p suppressHydrationWarning>{t('services-tab.service3Text')}</p>  {/* Usar t() para traducir el texto */}
+                      <p className="ks-copy" suppressHydrationWarning>{t('services-tab.service3Text')}</p>  {/* Usar t() para traducir el texto */}
                     </div>
-                    <Link href="/dark/page-services" className="mt-30">
+                    <Link href="/dark/page-services" className="ks-text-link mt-30">
                       <span className="mr-15" suppressHydrationWarning>{t('services-tab.readMore')}</span>
                       <i className="fas fa-long-arrow-alt-right"></i>
                     </Link>
@@ -88,9 +88,9 @@ function ServicesTab({ lightMode }) {
                       <img src={`${prefix}/${lightMode ? 'light' : 'dark'}/assets/imgs/icons/0.png`} alt="" />
                     </div>
                     <div className="text">
-                      <p suppressHydrationWarning>{t('services-tab.service4Text')}</p>  {/* Usar t() para traducir el texto */}
+                      <p className="ks-copy" suppressHydrationWarning>{t('services-tab.service4Text')}</p>  {/* Usar t() para traducir el texto */}
                     </div>
-                    <Link href="/dark/page-services" className="mt-30">
+                    <Link href="/dark/page-services" className="ks-text-link mt-30">
                       <span className="mr-15" suppressHydrationWarning>{t('services-tab.readMore')}</span>
                       <i className="fas fa-long-arrow-alt-right"></i>
                     </Link>
@@ -102,8 +102,8 @@ function ServicesTab({ lightMode }) {
           <div className="col-lg-5 offset-lg-1 valign order1">
             <div className="serv-tab-link tab-links full-width md-mb50">
               <div className="sec-lg-head mb-80">
-                <h6 className="dot-titl mb-15" suppressHydrationWarning>{t('services-tab.philosophy')}</h6>  {/* Traducir el título */}
-                <p></p>
+                <h6 className="ks-label mb-15" suppressHydrationWarning>{t('services-tab.philosophy')}</h6>  {/* Traducir el título */}
+                <p className="ks-copy"></p>
               </div>
               <ul className="rest">
                 <li className="item-link current mb-15" data-tab="tabs-1" onClick={openTab} suppressHydrationWarning>

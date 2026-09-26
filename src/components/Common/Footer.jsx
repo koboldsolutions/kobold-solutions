@@ -1,112 +1,56 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-//= Data
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
-import prefix from '@/common/prefix';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';  // Importa el hook
+import { useTranslation } from 'react-i18next';
+import prefix from '@/common/prefix';
 
-function Footer({ lightMode, subBg }) {
+export default function Footer() {
+  const { t } = useTranslation('common');
+  const footerRef = useRef(null);
 
-  const { t, i18n} = useTranslation('common');  // Usa el hook para obtener las traducciones
-
-  const useIsomorphicLayoutEffect = typeof window !== "undefined"
-    ? useLayoutEffect
-    : useEffect;
-
-  useIsomorphicLayoutEffect(() => {
-    if (document.body.clientWidth > 991) {
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.set('.footer-container', { yPercent: -50 });
-      const uncover = gsap.timeline({ paused: true });
-      uncover.to('.footer-container', { yPercent: 0, ease: 'none' });
-      ScrollTrigger.create({
-        trigger: 'main',
-        start: 'bottom bottom',
-        end: '+=50%',
-        animation: uncover,
-        scrub: true,
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const media = gsap.matchMedia();
+    media.add('(min-width: 992px) and (prefers-reduced-motion: no-preference)', () => {
+      gsap.fromTo(footerRef.current.querySelector('.footer-container'), { yPercent: -30 }, {
+        yPercent: 0, ease: 'none', scrollTrigger: { trigger: footerRef.current, start: 'top bottom', end: 'bottom bottom', scrub: true },
       });
-    }
+    });
+    return () => media.revert();
   }, []);
 
- 
-  
-
   return (
-    <footer className={subBg ? 'sub-bg pt-80' : ''}>
+    <footer ref={footerRef} className="ks-site ks-footer">
       <div className="footer-container">
-        <div className="container pb-80 pt-80 ontop">
-          <div className="row">
-            <div className="col-lg-4">
-              <div className="colum md-mb50">
-                <div className="tit mb-20">
-                  <h6>{t('footer.address')}</h6>  {/* Usamos el hook de traducción */}
-                </div>
-                <div className="text">
-                  <p>{t('footer.location')}</p>  {/* Usamos el hook de traducción */}
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 offset-lg-1">
-              <div className="colum md-mb50">
-                <div className="tit mb-20">
-                  <h6>{t('footer.contact')}</h6>  {/* Usamos el hook de traducción */}
-                </div>
-                <div className="text">
-                  <p className="mb-10">
-                    <a>{t('footer.email')}</a>  {/* Usamos el hook de traducción */}
-                  </p>
-                  <h5>
-                    <Link target="_blank" href="https://wa.me/59175521925?text=Estoy%20interesado%20en%20sus%20servicios%20de%20Tecnologia!">
-                      {t('footer.phone')}  {/* Usamos el hook de traducción */}
-                    </Link>
-                  </h5>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-2 md-mb50">
-              <div className="tit mb-20">
-                <h6>{t('footer.social')}</h6>  {/* Usamos el hook de traducción */}
-              </div>
-              <ul className="rest social-text">
-                <li>
-                  <Link target="_blank" href="https://www.facebook.com">{t('footer.facebook')}</Link>  {/* Usamos el hook de traducción */}
-                </li>
-                <li>
-                  <Link target="_blank" href="https://www.x.com">{t('footer.x')}</Link>  {/* Usamos el hook de traducción */}
-                </li>
-                <li>
-                  <Link target="_blank" href="https://www.linkedin.com">{t('footer.linkedin')}</Link>  {/* Usamos el hook de traducción */}
-                </li>
-                <li>
-                  <Link target="_blank" href="https://instagram.com">{t('footer.instagram')}</Link>  {/* Usamos el hook de traducción */}
-                </li>
-              </ul>
-            </div>
+        <div className="container ks-footer__grid">
+          <div>
+            <Link href="/" className="ks-footer__brand" aria-label="Kobold Solutions">
+              <img src={`${prefix}/dark/assets/imgs/koboldlogo.png`} alt="Kobold Solutions" />
+            </Link>
+            <p className="ks-copy">{t('design')}</p>
+          </div>
+          <div>
+            <h2 className="ks-label">{t('footer.address')}</h2>
+            <p className="ks-copy">{t('footer.location')}</p>
+          </div>
+          <div>
+            <h2 className="ks-label">{t('footer.contact')}</h2>
+            <a href={`mailto:${t('footer.email')}`}>{t('footer.email')}</a>
+            <a className="ks-footer__phone" target="_blank" rel="noreferrer" href="https://wa.me/59175521925">{t('footer.phone')}</a>
+          </div>
+          <div>
+            <h2 className="ks-label">{t('footer.social')}</h2>
+            <ul className="rest ks-footer__social">
+              {[
+                ['facebook', 'https://www.facebook.com'], ['x', 'https://www.x.com'],
+                ['linkedin', 'https://www.linkedin.com'], ['instagram', 'https://instagram.com'],
+              ].map(([name, href]) => <li key={name}><a href={href} target="_blank" rel="noreferrer">{t(`footer.${name}`)}</a></li>)}
+            </ul>
           </div>
         </div>
-        <div className="sub-footer pt-40 pb-40 bord-thin-top ontop">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-4">
-                <a className="logo icon-img-100">
-                  <img src={`${prefix}/dark/assets/imgs/koboldlogo02.png`} alt="logo" />
-                </a>
-              </div>
-              <div className="col-lg-8">
-                <div className="copyright d-flex">
-                  <div className="ml-auto">
-                    <p className="fz-13">© 2023 Kobold Solutions <span className="underline"></span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div className="ks-footer__bottom"><div className="container"><p>© {new Date().getFullYear()} Kobold Solutions</p></div></div>
       </div>
     </footer>
   );
 }
-
-export default Footer;

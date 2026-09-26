@@ -19,15 +19,15 @@ const { t, i18n, ready } = useTranslation('common');
 
 
   return (
-    <section className="contact-crev section-padding">
+    <section className="contact-crev section-padding ks-contact-details">
       <div className="container">
         <div className="row">
           <div className="col-lg-5">
             <div className="sec-lg-head mb-80">
-              <h6 className="dot-titl mb-10">{t('contact-form.title')}</h6>
-              <h2 className="fz-50">{t('contact-form.slogan')}<br /> {t('contact-form.slogan2')}</h2>
-              <p className="fz-15 mt-10">{t('contact-form.description')}</p>
-              <div className="phone fz-30 fw-600 mt-30 underline">
+              <h6 className="ks-label mb-10">{t('contact-form.title')}</h6>
+              <h2 className="ks-heading">{t('contact-form.slogan')}<br /> <span className="ks-accent">{t('contact-form.slogan2')}</span></h2>
+              <p className="ks-copy mt-10">{t('contact-form.description')}</p>
+              <div className="phone mt-30 underline">
                 <Link target="_blank" href="https://wa.me/59175521925?text=Estoy%20interesado%20en%20sus%20servicios%20de%20Tecnologia!">+591 755 21 925</Link>
               </div>
               <ul className="rest social-text d-flex mt-60">
@@ -47,7 +47,7 @@ const { t, i18n, ready } = useTranslation('common');
             </div>
           </div>
           <div className="col-lg-6 offset-lg-1 valign">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d949.7522618902294!2d-63.196563130368524!3d-17.79127189894788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e81b97e70887%3A0xce8a4799d783c476!2sBarasea%2018%2C%20Santa%20Cruz%20de%20la%20Sierra!5e0!3m2!1sen!2sbo!4v1700252115280!5m2!1sen!2sbo" width="600" height="450"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          <iframe className="ks-contact-map" title={t('footer.location')} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d949.7522618902294!2d-63.196563130368524!3d-17.79127189894788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e81b97e70887%3A0xce8a4799d783c476!2sBarasea%2018%2C%20Santa%20Cruz%20de%20la%20Sierra!5e0!3m2!1sen!2sbo!4v1700252115280!5m2!1sen!2sbo" width="600" height="450"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             {/* <div className="full-width">
               <form id="contact-form" method="post" action="contact.php">
                 <div className="messages"></div>

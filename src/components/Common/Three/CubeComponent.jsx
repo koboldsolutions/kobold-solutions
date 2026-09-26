@@ -1,249 +1,263 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import * as THREE from 'three';
-import {TextGeometry} from 'three/addons/geometries/TextGeometry.js' 
-import { FontLoader } from 'three/addons/loaders/FontLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import prefix from '@/common/prefix';
-import TWEEN from '@tweenjs/tween.js'
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
-import {EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
-import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
+import styles from './CubeComponent.module.css';
 
+const services = ['web', 'commerce', 'software'];
 
-const CubeComponent = () => {
-    const containerRef = useRef();
-    const cube = useRef();
-    const greenLight = useRef();
-    
-    const quaternion = new THREE.Quaternion(); 
-    
+// Small solid models share the cube's green palette and need no external assets.
+function createServiceObjects() {
+  const dark = new THREE.MeshStandardMaterial({ color: 0x152c24, metalness: 0.45, roughness: 0.3 });
+  const green = new THREE.MeshStandardMaterial({ color: 0x63eb99, emissive: 0x16753b, emissiveIntensity: 0.4, roughness: 0.35 });
+  const white = new THREE.MeshStandardMaterial({ color: 0xe0f7ea, roughness: 0.4 });
+  const addBox = (group, size, position, material) => {
+    const mesh = new THREE.Mesh(new THREE.BoxGeometry(...size), material);
+    mesh.position.set(...position);
+    group.add(mesh);
+    return mesh;
+  };
+  const connect = (group, from, to, radius = 0.025) => {
+    const start = new THREE.Vector3(...from);
+    const end = new THREE.Vector3(...to);
+    const delta = end.clone().sub(start);
+    const mesh = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, delta.length(), 12), green);
+    mesh.position.copy(start.add(end).multiplyScalar(0.5));
+    mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), delta.normalize());
+    group.add(mesh);
+  };
 
+  const browser = new THREE.Group();
+  addBox(browser, [1.05, 0.76, 0.14], [0, 0, 0], green);
+  addBox(browser, [0.95, 0.54, 0.05], [0, -0.06, 0.09], dark);
+  [-0.38, -0.26, -0.14].forEach((x) => {
+    const dot = new THREE.Mesh(new THREE.SphereGeometry(0.028, 12, 8), dark);
+    dot.position.set(x, 0.29, 0.09);
+    browser.add(dot);
+  });
+  addBox(browser, [0.22, 0.31, 0.035], [-0.29, -0.06, 0.13], green);
+  [0.08, -0.04, -0.16].forEach((y, index) => {
+    addBox(browser, [index === 2 ? 0.23 : 0.4, 0.035, 0.035], [0.1, y, 0.13], white);
+  });
 
-    let isDragging = false;
-    let previousMousePosition = { x: 0, y: 0 };
+  const bag = new THREE.Group();
+  const bagBody = addBox(bag, [0.68, 0.72, 0.32], [0, -0.1, 0], dark);
+  const outline = new THREE.LineSegments(new THREE.EdgesGeometry(bagBody.geometry), new THREE.LineBasicMaterial({ color: 0x63eb99 }));
+  outline.position.y = -0.1;
+  bag.add(outline);
+  const handle = new THREE.Mesh(new THREE.TorusGeometry(0.19, 0.038, 10, 28, Math.PI), green);
+  handle.position.set(0, 0.26, 0);
+  bag.add(handle);
+  connect(bag, [-0.13, -0.08, 0.18], [-0.02, -0.19, 0.18]);
+  connect(bag, [-0.02, -0.19, 0.18], [0.17, 0.04, 0.18]);
 
-    const dragStart = useRef({ x: 0, y: 0 });
+  const network = new THREE.Group();
+  const points = [[0, 0, 0.12], [-0.42, 0.3, 0], [0.42, 0.3, 0], [-0.35, -0.35, 0], [0.35, -0.35, 0]];
+  points.forEach((point, index) => {
+    const node = new THREE.Mesh(new THREE.IcosahedronGeometry(index === 0 ? 0.19 : 0.12, 1), index === 0 ? white : green);
+    node.position.set(...point);
+    network.add(node);
+    if (index) connect(network, points[0], point);
+  });
+  return [browser, bag, network];
+}
 
-    const startDragging = (event) => {
-      // Check if mouse position is within the canvas boundaries
-      const rect = containerRef.current.getBoundingClientRect();
-      if (event.clientX < rect.left || event.clientX > rect.left + rect.width ||
-        event.clientY < rect.top || event.clientY > rect.top + rect.height) {
-        return; // Ignore dragging if outside the canvas
+export default function CubeComponent() {
+  const { t } = useTranslation('common');
+  const stageRef = useRef(null);
+  const buttonsRef = useRef([]);
+  const activeRef = useRef(null);
+  const pausedRef = useRef(false);
+  const [hovered, setHovered] = useState(null);
+  const [focused, setFocused] = useState(null);
+  const [selected, setSelected] = useState(null);
+  const [paused, setPaused] = useState(false);
+  const [available, setAvailable] = useState(false);
+  const active = hovered ?? focused ?? selected;
+
+  useEffect(() => { activeRef.current = active; }, [active]);
+  useEffect(() => { pausedRef.current = paused; }, [paused]);
+
+  useEffect(() => {
+    const stage = stageRef.current;
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    } catch {
+      return; // Keep the logo and service buttons usable without WebGL.
+    }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.domElement.setAttribute('aria-hidden', 'true');
+    stage.prepend(renderer.domElement);
+    setAvailable(true);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.OrthographicCamera(-4.3, 4.3, 3.4, -3.4, 0.1, 30);
+    camera.position.z = 10;
+    scene.add(new THREE.AmbientLight(0xd9ffe8, 2));
+    const key = new THREE.DirectionalLight(0xffffff, 3);
+    key.position.set(3, 4, 6);
+    scene.add(key);
+    const rim = new THREE.PointLight(0x39b549, 12, 15);
+    rim.position.set(-3, 1, 4);
+    scene.add(rim);
+
+    let disposed = false;
+    const texture = new THREE.TextureLoader().load(`${prefix}/dark/assets/imgs/koboldlogo02.png`, (loaded) => {
+      if (disposed) loaded.dispose();
+    });
+    texture.colorSpace = THREE.SRGBColorSpace;
+    const cube = new THREE.Mesh(new THREE.BoxGeometry(1.65, 1.65, 1.65), new THREE.MeshStandardMaterial({ map: texture, roughness: 0.45, metalness: 0.12 }));
+    cube.rotation.set(0.18, -0.35, -0.08);
+    scene.add(cube);
+
+    const orbitPosition = (angle) => new THREE.Vector3(Math.cos(angle) * 2.95, Math.sin(angle) * 1.65, Math.sin(angle) * 0.65);
+    const orbitPoints = Array.from({ length: 129 }, (_, index) => orbitPosition(index / 128 * Math.PI * 2));
+    const orbit = new THREE.Line(new THREE.BufferGeometry().setFromPoints(orbitPoints), new THREE.LineBasicMaterial({ color: 0x4baa72, transparent: true, opacity: 0.22 }));
+    scene.add(orbit);
+    const objects = createServiceObjects();
+    objects.forEach((object, index) => {
+      object.position.copy(orbitPosition(index * Math.PI * 2 / 3 + 0.45));
+      scene.add(object);
+    });
+
+    const resize = () => {
+      const { width, height } = stage.getBoundingClientRect();
+      const aspect = width / Math.max(height, 1);
+      const viewWidth = Math.max(8.6, aspect * 5.9);
+      camera.left = -viewWidth / 2;
+      camera.right = viewWidth / 2;
+      camera.top = viewWidth / aspect / 2;
+      camera.bottom = -camera.top;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    };
+    const observer = new ResizeObserver(resize);
+    observer.observe(stage);
+    resize();
+
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let visible = true;
+    const visibilityObserver = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; });
+    visibilityObserver.observe(stage);
+    let drag = null;
+    const pointerDown = (event) => {
+      if (event.pointerType !== 'mouse' || event.button !== 0) return;
+      drag = { x: event.clientX, y: event.clientY };
+      renderer.domElement.setPointerCapture(event.pointerId);
+    };
+    const pointerMove = (event) => {
+      if (!drag) return;
+      cube.rotation.y += (event.clientX - drag.x) * 0.008;
+      cube.rotation.x += (event.clientY - drag.y) * 0.008;
+      drag = { x: event.clientX, y: event.clientY };
+    };
+    const pointerUp = () => { drag = null; };
+    renderer.domElement.addEventListener('pointerdown', pointerDown);
+    renderer.domElement.addEventListener('pointermove', pointerMove);
+    renderer.domElement.addEventListener('pointerup', pointerUp);
+    renderer.domElement.addEventListener('pointercancel', pointerUp);
+    renderer.domElement.addEventListener('lostpointercapture', pointerUp);
+
+    let frame;
+    let lastTime = 0;
+    let angle = 0.45;
+    const projected = new THREE.Vector3();
+    const animate = (time) => {
+      frame = requestAnimationFrame(animate);
+      const delta = Math.min((time - lastTime) / 1000, 0.05);
+      lastTime = time;
+      if (!visible || document.hidden) return;
+      const moving = !motion.matches && !pausedRef.current && activeRef.current === null && !drag;
+      if (moving) {
+        angle += delta * 0.13;
+        cube.rotation.y += delta * 0.14;
+        cube.rotation.z += delta * 0.025;
       }
-    
-      event.preventDefault();
-      isDragging = true;
-      previousMousePosition = {
-        x: event.clientX,
-        y: event.clientY,
-      };
-    };
-
-  const dragging = (event) => {
-      if (!isDragging) return;
-
-      const deltaX = event.clientX - previousMousePosition.x;
-      const deltaY = event.clientY - previousMousePosition.y;
-
-      // Calculate the rotation quaternion based on mouse movement
-      const deltaRotationQuaternion = new THREE.Quaternion()
-          .setFromEuler(
-              new THREE.Euler(
-                  deltaY * 0.005,
-                  deltaX * 0.005,
-                  0,
-                  'XYZ'
-              )
-          );
-
-      // Combine the new rotation with the existing quaternion rotation
-      quaternion.multiplyQuaternions(deltaRotationQuaternion, quaternion);
-
-      cube.current.setRotationFromQuaternion(quaternion);
-
-      previousMousePosition = {
-          x: event.clientX,
-          y: event.clientY,
-      };
-  };
-  
-  const stopDragging = () => {
-    isDragging = false;
-    
-  
-    const currentRotation = cube.current.rotation.clone();
-    const targetRotation = new THREE.Euler(0, Math.PI, 0); // Adjust this angle as needed
-  
-    new TWEEN.Tween({ x: currentRotation.x, y: currentRotation.y, z: currentRotation.z })
-      .to({ x: targetRotation.x, y: targetRotation.y, z: targetRotation.z }, 1000) // Set the duration for the rotation
-      .easing(TWEEN.Easing.Quadratic.InOut) // Adjust the easing function as needed
-      .onUpdate((tweenData) => {
-        cube.current.rotation.set(tweenData.x, tweenData.y, tweenData.z);
-      })
-      .start();
-  };
-
-    const onMouseMove = (event) => {
-      if (containerRef.current) {
-        
-        const rect = containerRef.current.getBoundingClientRect();
-        const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-        const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-        greenLight.current.position.set(x, y, greenLight.current.position.z);
-      }
-    };
-
-    const onMouseUp = () => {
-      isDragging = false;
-    };
-
-    useEffect(() => {
-
-
-
-
-
-
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-      camera.position.z = 5;
-      containerRef.current.style.height = '400px';
-      
-  
-      const renderer = new THREE.WebGLRenderer({ alpha: true });
-      renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
-      
-      containerRef.current.appendChild(renderer.domElement);
-      const controls = new OrbitControls(camera, renderer.domElement);
-      controls.enableZoom = false
-      controls.dispose();
-
-      //bloom
-      const renderTarget = new THREE.WebGLRenderTarget(
-        window.innerWidth,
-        window.innerHeight,
-        {
-          minFilter: THREE.LinearFilter,
-          magFilter: THREE.LinearFilter,
-          format: THREE.RGBFormat,
-          stencilBuffer:
-      
-      false,
+      objects.forEach((object, index) => {
+        const highlighted = activeRef.current === index;
+        const target = orbitPosition(angle + index * Math.PI * 2 / 3);
+        if (highlighted) target.z = 2.5;
+        const blend = motion.matches ? 1 : 1 - Math.exp(-delta * 10);
+        object.position.lerp(target, blend);
+        const scale = THREE.MathUtils.lerp(object.scale.x, highlighted ? 1.3 : 1, blend);
+        object.scale.setScalar(scale);
+        object.rotation.y = highlighted ? -0.12 : Math.sin(angle + index) * 0.25;
+        projected.copy(object.position).project(camera);
+        const button = buttonsRef.current[index];
+        if (button) {
+          button.style.left = `${(projected.x + 1) * 50}%`;
+          button.style.top = `${(1 - projected.y) * 50}%`;
         }
-      );
-
-      const renderPass = new RenderPass(scene, camera);
-      renderPass.renderTarget = renderTarget;
-
-      const bloomPass = new UnrealBloomPass(
-        new THREE.Vector2(window.innerWidth, window.innerHeight),
-        1.6,
-        0.1,
-        0.1
-      );
-      const composer = new EffectComposer(renderer);
-      composer.addPass(renderPass);
-      composer.addPass(bloomPass);
-
-
-
-      const textureLoader = new THREE.TextureLoader();
-      const logoTexture = textureLoader.load(`${prefix}/dark/assets/imgs/koboldlogo02.png`);
-
-      const matlogo = new THREE.MeshPhongMaterial({
-
-        map: logoTexture, // Texture for the front face// Adjust the bump intensity
       });
+      renderer.render(scene, camera);
+    };
+    frame = requestAnimationFrame(animate);
 
-      const matgreen = new THREE.MeshPhongMaterial({ color: 0x004516 });
-
-  
-      // Create a larger cube with a Phong material
-      const cubeSize = 2.5;
-      const geometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize, 27, 27, 27);
-      const materials = [
-        matlogo,
-        matlogo,
-        matlogo,
-        matlogo,
-        matlogo,
-        matlogo,
-        
-      ];
-  
-      cube.current = new THREE.Mesh(geometry, materials);
-      scene.add(cube.current);
-
-      greenLight.current = new THREE.PointLight(0x278f48, 1, 10); // Green light
-      greenLight.current.position.set(0, 0, 2);
-      scene.add(greenLight.current);
-  
-      // Add a white directional light
-      const light1 = new THREE.DirectionalLight(0x919191, 7);
-      light1.position.set(0, 1, 0);
-      scene.add(light1);
-
-      const light2 = new THREE.DirectionalLight(0xedfff0, 5);
-      light2.position.set(0, -1, 0);
-      scene.add(light2);
-
-
-
-
-
-      // bloom
-
-      
-
-
-  
-      controls.current = new OrbitControls(camera, renderer.domElement);
-      controls.current.enableZoom = false
-      controls.current.dispose();
-      controls.current.addEventListener('change', () => {
-        renderer.render(scene, camera);
+    return () => {
+      disposed = true;
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      visibilityObserver.disconnect();
+      renderer.domElement.removeEventListener('pointerdown', pointerDown);
+      renderer.domElement.removeEventListener('pointermove', pointerMove);
+      renderer.domElement.removeEventListener('pointerup', pointerUp);
+      renderer.domElement.removeEventListener('pointercancel', pointerUp);
+      renderer.domElement.removeEventListener('lostpointercapture', pointerUp);
+      const geometries = new Set();
+      const materials = new Set();
+      scene.traverse((object) => {
+        if (object.geometry) geometries.add(object.geometry);
+        if (object.material) materials.add(object.material);
       });
-  
-      const animate = () => {
-        TWEEN.update();
-        requestAnimationFrame(animate);
-        if (!isDragging) {
-          // Adjust the rotation to create a slight animation effect
-          cube.current.rotation.x += 0.0005;
-          cube.current.rotation.y += 0.0001;
-          cube.current.rotation.z += 0.002;
-        }
-        renderer.render(scene, camera);
-        //composer.render()
-      };
-      animate();
-  
-      const handleResize = () => {
-        const { clientWidth, clientHeight } = containerRef.current;
-        camera.aspect = clientWidth / clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(clientWidth, clientHeight);
-      };
+      geometries.forEach((geometry) => geometry.dispose());
+      materials.forEach((material) => material.dispose());
+      texture.dispose();
+      renderer.dispose();
+      renderer.domElement.remove();
+    };
+  }, []);
 
-      controls.dispose();
-  
-      window.addEventListener('resize', handleResize);
-
-      window.addEventListener('mousemove', onMouseMove);
-          // Add event listeners for dragging the cube
-    window.addEventListener('mousedown', startDragging);
-    window.addEventListener('mousemove', dragging);
-    window.addEventListener('mouseup', stopDragging);
-  
-      return () => {
-        window.removeEventListener('resize', handleResize);
-        window.removeEventListener('mousedown', startDragging);
-        window.removeEventListener('mousemove', dragging);
-        window.removeEventListener('mouseup', stopDragging);
-      };
-    }, []);
-  
-    return <div ref={containerRef} style={{ width: '100%', height: '100%' }} />;
-  };
-export default CubeComponent;
+  return (
+    <div className={styles.experience}>
+      <div ref={stageRef} className={`${styles.stage} ${available ? styles.ready : ''}`} role="group" aria-label={t('orbit.title')}>
+        {!available && <div className={styles.fallback} style={{ backgroundImage: `url(${prefix}/dark/assets/imgs/koboldlogo02.png)` }} />}
+        {services.map((service, index) => (
+          <button
+            key={service}
+            ref={(element) => { buttonsRef.current[index] = element; }}
+            type="button"
+            className={`${styles.service} ${active === index ? styles.active : ''}`}
+            aria-label={t(`orbit.${service}.title`)}
+            aria-pressed={selected === index}
+            onPointerEnter={(event) => { if (event.pointerType !== 'touch') setHovered(index); }}
+            onPointerLeave={() => setHovered(null)}
+            onFocus={() => setFocused(index)}
+            onBlur={() => setFocused(null)}
+            onClick={() => setSelected(selected === index ? null : index)}
+            onKeyDown={(event) => {
+              if (event.key === 'Escape') {
+                setSelected(null);
+                setHovered(null);
+                event.currentTarget.blur();
+              }
+            }}
+          >
+            <span className={styles.marker} aria-hidden="true">{['▤', '✓', '●'][index]}</span>
+            <span className={styles.objectLabel}>{t(`orbit.${service}.title`)}</span>
+          </button>
+        ))}
+      </div>
+      <div className={styles.caption} aria-live="polite" aria-atomic="true">
+        {active === null ? <span className={styles.hint}>{t('orbit.hint')}</span> : <>
+          <strong>{t(`orbit.${services[active]}.title`)}</strong>
+          <span>{t(`orbit.${services[active]}.description`)}</span>
+        </>}
+      </div>
+      {available && <button type="button" className={styles.motion} aria-pressed={paused} onClick={() => setPaused(!paused)}>
+        <span aria-hidden="true">{paused ? '▷' : 'Ⅱ'}</span> {t(paused ? 'orbit.resume' : 'orbit.pause')}
+      </button>}
+    </div>
+  );
+}

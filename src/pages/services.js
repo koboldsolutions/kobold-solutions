@@ -26,11 +26,7 @@ function PageServices() {
     return () => document.body.classList.remove('main-bg');
   }, []);
 
-  const headerMetadata = {
-    subTitle: "¿ QUÉ OFRECEMOS ?",
-    title: "Combinamos nuestra pasión por diseño y código.",
-    text: "SERVICIOS"
-  }
+
 
   return (
     <>
@@ -40,12 +36,12 @@ function PageServices() {
 
       <Loader />
       <Navbar mainBg />
-      <main>
-        <ServicesHeader data={headerMetadata} subBg={true} />
+      <main className="ks-site">
+        <ServicesHeader />
         <ServicesSection />
         <ServicesScroll />
         <ServicesTab />
-        <CallToAction innerPageStyle />
+        <CallToAction />
       </main>
       <Footer />
     </>

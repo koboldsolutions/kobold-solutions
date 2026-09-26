@@ -1,0 +1,151 @@
+/* Shared visual language for the landing, services, contact, and footer. */
+:root {
+  --ks-font: 'Figtree', sans-serif;
+  --ks-text: #f5f7f5;
+  --ks-muted: #b6c1b9;
+  --ks-accent: #84e2a1;
+  --ks-accent-hover: #a4f2bc;
+  --ks-ink: #112218;
+  --ks-surface: #202522;
+  --ks-border: rgba(132, 226, 161, 0.2);
+  --ks-display: clamp(38px, 6.5vw, 88px);
+  --ks-title: clamp(38px, 5.2vw, 72px);
+  --ks-heading: clamp(32px, 4vw, 56px);
+  --ks-card-title: clamp(21px, 2vw, 27px);
+  --ks-body: clamp(15px, 1.2vw, 17px);
+  --ks-section-space: clamp(64px, 8vw, 112px);
+  --ks-radius: 18px;
+}
+
+.ks-site { font-family: var(--ks-font); color: var(--ks-text); }
+.ks-site .ks-display, .ks-site .ks-title, .ks-site .ks-heading, .ks-site .ks-card-title {
+  font-family: var(--ks-font);
+  color: var(--ks-text);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+.ks-site .ks-display { font-size: var(--ks-display); line-height: 1.06; }
+.ks-site .ks-title { font-size: var(--ks-title); }
+.ks-site .ks-heading { font-size: var(--ks-heading); }
+.ks-site .ks-card-title { font-size: var(--ks-card-title); letter-spacing: -0.025em; line-height: 1.25; }
+.ks-site .ks-accent { color: var(--ks-accent); font-weight: 400; }
+.ks-site .ks-copy {
+  font-family: var(--ks-font);
+  font-size: var(--ks-body);
+  line-height: 1.75;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--ks-muted);
+  text-wrap: pretty;
+}
+.ks-site .ks-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--ks-font);
+  color: #c4d4c9;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.ks-site .ks-label::before { content: ''; width: 23px; height: 1px; flex-shrink: 0; background: var(--ks-accent); }
+.ks-site .section-padding { padding-top: var(--ks-section-space); padding-bottom: var(--ks-section-space); }
+.ks-site :is(a, button):focus-visible { outline: 2px solid var(--ks-accent); outline-offset: 5px; }
+.ks-site .ks-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-height: 56px;
+  padding: 15px 23px;
+  border: 1px solid var(--ks-accent);
+  border-radius: 100px;
+  background: var(--ks-accent);
+  color: var(--ks-ink);
+  font-family: var(--ks-font);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-align: center;
+  transition: background 180ms ease, transform 180ms ease;
+}
+.ks-site .ks-button svg { width: 22px; height: 22px; flex-shrink: 0; }
+.ks-site .ks-button:hover { background: var(--ks-accent-hover); color: var(--ks-ink); transform: translateY(-2px); }
+.ks-site .ks-text-link { display: inline-flex; align-items: center; gap: 12px; color: var(--ks-accent); font-size: 14px; font-weight: 500; letter-spacing: 0; }
+.ks-site .ks-text-link:hover { color: var(--ks-accent-hover); }
+.ks-site .ks-text-link .circle { border-color: var(--ks-border); }
+.ks-site .ks-text-link .circle + span { font-size: 14px; text-transform: none !important; }
+
+.ks-page-header { padding: var(--ks-section-space) 0; border-bottom: 1px solid var(--ks-border); background: radial-gradient(ellipse at 85% 0, rgba(132,226,161,0.06), transparent 65%); }
+.ks-page-header__grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: end; }
+.ks-page-header .ks-label { margin-bottom: 24px; }
+.ks-page-header .ks-title { margin: 0; }
+.ks-page-header .ks-accent { display: block; }
+.ks-page-header .ks-copy { max-width: 440px; margin: 0 0 5px; }
+
+.ks-site .serv-item, .ks-site .item-serv { padding: 32px; border: 1px solid var(--ks-border); border-radius: var(--ks-radius); background: var(--ks-surface); }
+.ks-site .serv-item { height: 100%; }
+.ks-site .serv-box .row, .ks-site .about .row.md-marg { row-gap: 28px; }
+.ks-site .item-serv { height: 100%; display: flex; flex-direction: column; }
+.ks-site .item-serv > .ks-text-link { margin-top: auto; padding-top: 24px; }
+.ks-site .item-serv .icon-img-50 { width: 36px; }
+.ks-site .item-serv .mr-30 { margin-right: 18px !important; }
+.ks-site .main-marq h4 { font-family: var(--ks-font); font-weight: 500; letter-spacing: -0.025em; }
+.ks-site .team-crev .background-lights { box-shadow: none; border: 1px solid var(--ks-border); background: var(--ks-surface); overflow: hidden; }
+.ks-site .team-crev .team-position h4 { color: var(--ks-accent); }
+.ks-site .serv-marq { background: var(--ks-border); box-shadow: none; }
+.ks-site .serv-marq .icon { color: var(--ks-accent); }
+.ks-site .approach-carso .item > .ks-card-title { font-size: 21px; }
+.ks-site .approach-carso .item .stroke { color: var(--ks-accent); -webkit-text-stroke-color: var(--ks-accent); }
+.ks-site .portfolio-fixed .list-arrow h6 { font-family: var(--ks-font); color: var(--ks-muted); line-height: 1.6; }
+.ks-site .portfolio-fixed .list-arrow .icon { color: var(--ks-accent); }
+.ks-site .services-tab .serv-tab-link .item-link { font-family: var(--ks-font); font-size: clamp(21px, 2.4vw, 30px); font-weight: 500; letter-spacing: -0.025em; line-height: 1.3; padding: 20px 0; border-bottom: 1px solid var(--ks-border); }
+.ks-site .services-tab .serv-tab-link .item-link span { color: var(--ks-accent); font-size: 13px; letter-spacing: 0.06em; }
+.ks-site .services-tab .serv-tab-cont .cont { border: 1px solid var(--ks-border); border-radius: var(--ks-radius); }
+.ks-site .ks-cta { border-top: 1px solid var(--ks-border); background: radial-gradient(ellipse at 50% 100%, rgba(132,226,161,0.07), transparent 70%); }
+.ks-cta__row { display: flex; gap: 32px; align-items: center; justify-content: space-between; }
+.ks-cta__row .ks-heading { max-width: 760px; margin: 0; }
+.ks-cta__row .ks-button { flex-shrink: 0; }
+.ks-site .ks-contact-details .ks-copy { margin-top: 20px; }
+.ks-site .ks-contact-details .phone { font-size: clamp(23px, 3vw, 32px); letter-spacing: -0.025em; font-weight: 500; color: var(--ks-accent); }
+.ks-site .ks-contact-details .social-text { flex-wrap: wrap; gap: 12px 24px; }
+.ks-site .ks-contact-details .social-text li { margin: 0 !important; }
+.ks-site .ks-contact-details .social-text a { font-size: 14px; color: var(--ks-muted); }
+.ks-site .ks-contact-details .social-text a:hover { color: var(--ks-accent); }
+.ks-contact-map { width: 100%; min-width: 0; height: 430px; border: 1px solid var(--ks-border); border-radius: var(--ks-radius); }
+
+.ks-footer { border-top: 1px solid var(--ks-border); background: #171c19; }
+.ks-footer__grid { display: grid; grid-template-columns: 1.2fr 1fr 1.2fr .7fr; gap: 36px; padding-top: 72px; padding-bottom: 64px; }
+.ks-footer__brand { max-width: 180px; margin-bottom: 24px; }
+.ks-footer .ks-label { display: flex; margin-bottom: 20px; font-size: 11px; }
+.ks-footer .ks-copy { font-size: 15px; }
+.ks-footer a { color: var(--ks-muted); overflow-wrap: anywhere; }
+.ks-footer a:hover { color: var(--ks-accent); }
+.ks-footer__phone { display: block; margin-top: 12px; font-size: 23px; letter-spacing: -0.025em; color: var(--ks-accent) !important; }
+.ks-footer__social li + li { margin-top: 10px; }
+.ks-footer__bottom { padding: 24px 0; border-top: 1px solid var(--ks-border); }
+.ks-footer__bottom p { margin: 0; font-size: 13px; color: var(--ks-muted); }
+
+@media (max-width: 991px) {
+  .ks-page-header__grid { grid-template-columns: 1fr; }
+  .ks-page-header .ks-copy { max-width: 620px; }
+  .ks-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ks-cta__row { align-items: flex-start; flex-direction: column; }
+  .ks-site .item-serv.md-mb50, .ks-site .serv-item.md-mb50 { margin-bottom: 0 !important; }
+  .ks-site .contact-crev .sec-lg-head { margin-bottom: 40px !important; }
+}
+@media (max-width: 575px) {
+  :root { --ks-display: clamp(38px, 10.8vw, 60px); }
+  .ks-site .ks-label { gap: 8px; font-size: 10px; letter-spacing: .08em; }
+  .ks-site .ks-label::before { width: 14px; }
+  .ks-site .ks-button { min-height: 50px; padding: 12px 18px; gap: 14px; font-size: 13px; }
+  .ks-site .serv-item, .ks-site .item-serv { padding: 24px; }
+  .ks-contact-map { height: 320px; }
+  .ks-footer__grid { grid-template-columns: 1fr; padding-top: 48px; padding-bottom: 40px; }
+}
+@media (prefers-reduced-motion: reduce) { .ks-site .ks-button { transition: none; } }

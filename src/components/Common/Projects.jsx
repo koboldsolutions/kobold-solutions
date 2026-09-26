@@ -52,13 +52,13 @@ function Projects() {
         <div className="row">
           <div className="col-lg-8">
             <div className="position-re">
-              <h6 className="dot-titl mb-10">{t('experiences')}</h6>
-              <h2 className="fz-70 fw-700">{t('projects')}</h2>
+              <h6 className="ks-label mb-10">{t('experiences')}</h6>
+              <h2 className="ks-heading">{t('projects')}</h2>
             </div>
           </div>
           <div className="col-lg-4 d-flex align-items-center">
             <div className="text">
-              <p>{t('p-projects')}</p>
+              <p className="ks-copy">{t('p-projects')}</p>
             </div>
           </div>
         </div>

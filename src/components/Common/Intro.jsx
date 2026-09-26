@@ -32,14 +32,14 @@ function Intro({ lightMode }) {
           </div>
           <div className="col-lg-7 valign">
             <div className="cont sec-lg-head">
-              <h6 className="dot-titl mb-20">{t('nuestro')}</h6>
-              <h2 className="d-slideup wow">
+              <h6 className="ks-label mb-20">{t('nuestro')}</h6>
+              <h2 className="ks-heading">
                 <span className="sideup-text"><span className="">{t('digitaliza')}</span></span>
               </h2>
               <div className="row">
                 <div className="col-lg-12">
                   <div className="text mt-20">
-                    <p>{t('text-1')}</p>
+                    <p className="ks-copy">{t('text-1')}</p>
                   </div>
                   
                   <div className="underline">
@@ -65,12 +65,12 @@ function Intro({ lightMode }) {
                   </div>
                 </div>
                 <div>
-                  <h6>{t('custom')}</h6>
+                  <h3 className="ks-card-title">{t('custom')}</h3>
                 </div>
               </div>
-              <p className="fz-14">{t('p-custom')} </p>
+              <p className="ks-copy ">{t('p-custom')} </p>
               {/* Mandar directo al formulario */}
-                <Link href="/services" className="arrow mt-40">
+                <Link href="/services" className="ks-text-link mt-40">
                   <span className="circle">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -92,11 +92,11 @@ function Intro({ lightMode }) {
                   </div>
                 </div>
                 <div>
-                  <h6>E-Commerce</h6>
+                  <h3 className="ks-card-title">E-Commerce</h3>
                 </div>
               </div>
-              <p className="fz-14">{t('p-ecommerce')}</p>
-                <Link href="/services" className="arrow mt-40">
+              <p className="ks-copy ">{t('p-ecommerce')}</p>
+                <Link href="/services" className="ks-text-link mt-40">
                   <span className="circle">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -118,11 +118,11 @@ function Intro({ lightMode }) {
                   </div>
                 </div>
                 <div>
-                  <h6>{t('consulting')}</h6>
+                  <h3 className="ks-card-title">{t('consulting')}</h3>
                 </div>
               </div>
-              <p className="fz-14">{t('p-consulting')}</p>
-                <Link href="/services" className="arrow mt-40">
+              <p className="ks-copy ">{t('p-consulting')}</p>
+                <Link href="/services" className="ks-text-link mt-40">
                   <span className="circle">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                       xmlns="http://www.w3.org/2000/svg">

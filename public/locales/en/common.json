@@ -67,6 +67,8 @@
       "description": "Ready to bring your project to life? Whether to collaborate or just to chat, we’re here to listen!"
       },
       "services": {
+        "titleLead": "Our passion for",
+        "titleAccent": "design and code.",
         "title":"We combine our passion for design and code.",
         "subtitle":"WHAT DO WE OFFER?",
         "description": "We help our clients succeed by creating digital experiences that communicate clearly, achieve marketing objectives, and look fantastic."
@@ -149,9 +151,28 @@
     "x": "X",
     "linkedin": "LinkedIn",
     "instagram": "Instagram"
+  },
+  "orbit": {
+  "title": "Kobold Solutions and our services",
+  "hint": "Explore our services · hover, tap, or use Tab",
+  "pause": "Pause animation",
+  "resume": "Resume animation",
+  "web": {
+    "title": "Web development",
+    "description": "Websites built around your business."
+  },
+  "commerce": {
+    "title": "E-commerce",
+    "description": "Turn your products into shopping experiences."
+  },
+  "software": {
+    "title": "Custom software",
+    "description": "Connected solutions for your next big idea."
   }
-
+},
+  "hero": {
+  "description": "Design, technology, and strategy to turn your next idea into a digital experience that stands out.",
+  "contact": "Let’s talk about your idea",
+  "services": "Explore our services"
 }
-    
-
-  
+}

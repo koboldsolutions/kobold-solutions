@@ -26,7 +26,7 @@ function PageContact() {
 
       <Loader />
       <Navbar mainBg />
-      <main>
+      <main className="ks-site">
         <ContactHeader />
         <ContactForm />
       </main>

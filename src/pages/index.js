@@ -43,7 +43,7 @@ export default function Home(props) {
       </Head>
       <Loader />
       <Navbar mainBg />
-      <main className="main-bg position-re">
+      <main className="main-bg position-re ks-site">
         <Header />
         <Marq />
         <Intro />

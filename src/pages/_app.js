@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import '@/styles/design-system.css';
 import Head from "next/head";
 import Script from "next/script";
 import "swiper/css";

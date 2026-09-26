@@ -1,128 +1,76 @@
 {
-    "web": "Soluciones Web",
-    "web2": "a tu medida",
-    "design":"Diseñando tu Futuro Digital",
-    "circle":"Websites - Mobile - eCommerce - Consultorias -",
-    "circle-two":"  A g e n c i a  -   D I G I T A L - A g e n c i a  -   A G E N C I A -",
-    "nuestro":"Nuestra Agencia Digital",
-    "digitaliza":"Digitaliza tu negocio",
-    "text-1":"Desarrollamos soluciones personalizadas y diseños visionarios. Creemos en entregar soluciones tecnologicas que permiten que los usarios sean independientes",
-    "custom":"Desarrollo de Software a Medida",
-    "p-custom":"Damos vida a tus ideas, diseñando y construyendo soluciones digitales desde la concepción hasta la implementación final.",
-    "see-more":"Ver más",
-    "p-ecommerce":"Transformamos tu visión en experiencias de compra. Creamos experiencias simples y emotivas que unen los objetivos de tu empresa con una excelente experiencia de compra.",
-    "consulting":"Consultoría de Software",
-    "p-consulting":"Compartimos nuestro conocimiento y experiencias para ayudarte a realizar tu siguiente paso.",
-    "experiences":"Experiencias Exitosas en Acción.",
-    "projects":"Proyectos Destacados",
-    "p-projects":"Colección de proyectos destacados que reflejan nuestra pasión por la creatividad y la excelencia en cada detalle.",
-    
-      "experience": {
-        "software": "Experiencia en software"
-      },
-      "process": {
-        "title": "Nuestro Proceso",
-        "investigation": {
-          "title": "Investigación",
-          "text": "Nos sumergimos en tu visión y objetivos, realizando una investigación y comprendiendo tus necesidades, sin costo."
-        },
-        "definition": {
-          "title": "Definición",
-          "text": "Nuestro equipo trabaja para dar vida a tu visión, transformando tus ideas en soluciones impactantes."
-        },
-        "development": {
-          "title": "Desarrollo",
-          "text": "Utilizamos tecnologías de vanguardia y las mejores prácticas de la industria para construir una solución digital robusta."
-        },
-        "delivery": {
-          "title": "Entrega",
-          "text": "Estamos presentes durante la entrega del proyecto y post entrega del proyecto."
-        }
-      },
-      "loading": "Cargando...",
-      "intro": {
-      "client_focus": "Foco en el cliente",
-      "innovation": "Innovación",
-      "transparency": "Transparencia",
-      "empowerment": "Empoderamiento",
-      "autonomy": "Autonomía",
-      "collaboration": "Colaboración"
-      },
-      "contact": {
-        "title": "Contáctanos",
-        "help_question": "¿Necesitas ayuda?",
-        "schedule_call": "Agenda una llamada de 15 minutos, ¡gratis!",
-        "contact_button": "Contacto"
-      },
-      "contact-page": {
-     "title": "Contáctanos",
-    "slogan": "Construyamos juntos",
-    "slogan2": "tu idea!",
-    "description": "Impulsamos el éxito de nuestros clientes mediante la creación de soluciones digitales que generan impacto, estrategias que funcionan y experiencias que perduran en la memoria."
+  "circle": "Software · Consultoría · IA ·",
+  "circle-two": "TU SOCIO TECNOLÓGICO · SOFTWARE · CONSULTORÍA · IA ·",
+  "see-more": "Ver más",
+  "experiences": "Experiencias Exitosas en Acción.",
+  "projects": "Proyectos Destacados",
+  "p-projects": "Colección de proyectos destacados que reflejan nuestra pasión por la creatividad y la excelencia en cada detalle.",
+  "experience": {
+    "software": "Cómo trabajamos"
+  },
+  "process": {
+    "title": "De entender el problema a implementarlo",
+    "investigation": {
+      "title": "Descubrimiento",
+      "text": "Empezamos por entender tu negocio, los sistemas que utilizas y el desafío que quieres resolver."
     },
-    "contact-form": {
-     "title": "Contacto",
-    "slogan": "Despejamos ",
-    "slogan2": "tus dudas.",
-    "description": "¿Listo para hacer realidad tu proyecto? Ya sea para colaborar o simplemente para charlar, ¡estamos aquí para escucharte!"
+    "definition": {
+      "title": "Recomendaciones",
+      "text": "Explicamos las opciones, sus ventajas y limitaciones. Acordamos un enfoque práctico y prioridades claras."
     },
-    "services": {
-        "titleLead": "Nuestra pasión por",
-        "titleAccent": "el diseño y el código.",
-      "title":"Combinamos nuestra pasión por diseño y código.",
-      "subtitle":"¿ QUÉ OFRECEMOS ?",
-      "description": "Ayudamos a nuestros clientes a triunfar al crear experiencias digitales que comunican de manera clara, alcanzan objetivos de marketing y lucen fantásticas."
+    "development": {
+      "title": "Implementación",
+      "text": "Desarrollamos, configuramos e integramos la solución junto a tu equipo, verificando que responda a tus necesidades."
     },
-    "services-page": {
-      "type1": "Desarrollo de Soluciones Personalizadas de Software",
-      "title1": "Calidad en cada línea de código",
-      "text1": "Transformamos tus ideas en soluciones digitales personalizadas. Cada línea de código es pensada y optimizada para brindar un rendimiento excepcional y una experiencia fluida.",
-      "listItem1": "Digitaliza tu empresa",
-      "listItem2": "Experiencias digitales",
-      "listItem3": "Amplía tu audiencia",
-      "listItem4": "Genera confianza",
-      "listItem5": "Promociona servicios y productos",
-      "listItem6": "Mejora la visibilidad en búsquedas",
-
-      "type2": "E-commerce",
-      "title2": "Aumenta tus ventas ampliando tu presencia digital. Te ayudamos a crear una experiencia armónica Omni-canal.",
-      "text2": "Crea tu propio E-commerce, adapta o integra",
-      "list2Item1": "Ventas 24/7 los 365 días del año",
-      "list2Item2": "Gestión eficiente de inventarios y pedidos",
-      "list2Item3": "Conocimiento de tus clientes",
-      "list2Item4": "Reduce costos operativos",
-      "list2Item5": "Facilita la experiencia de tu cliente",
-      "list2Item6": "Compite en el mercado actual",
-
-      "type3": "Consultoría y Optimización de Software",
-      "title3": "Optimización de Software",
-      "text3": "Ayudamos a optimizar tus soluciones de software para un rendimiento y eficiencia óptimos.",
-      "list3Item1": "Análisis exhaustivo de tu software existente.",
-      "list3Item2": "Identificación de áreas de mejora y optimización.",
-      "list3Item3": "Implementación de soluciones para mejorar la eficiencia.",
-      "list3Item4": "Optimización de recursos y tiempos de respuesta.",
-      "list3Item5": "Soporte continuo para garantizar un funcionamiento sin problemas."
-    },
-
-    "services-page2": {
-      "title": "Servicios",
-      "mainTitle": "Nuestros Servicios",
-      "service1Title": "Desarrollo de Software a Medida",
-      "service1Text": "Entendemos tu necesidad y la traemos a la vida, puede ser con desarrollo directo o con herramientas de Low-Code o NoCode, de acuerdo a tu necesidad.",
-      "service2Title": "E-Commerce y CRMs",
-      "service2Text": "Transformamos tu visión en experiencias de compra, con desarrollo directo o con herramientas de Low-Code o NoCode (WordPress-WooCommerce, Shopify, CRMs y más).",
-      "service3Title": "Consultoría y Optimización de Software",
-      "service3Text": "Compartimos nuestro conocimiento y experiencias para ayudarte a realizar tu siguiente paso."
-    },
-    "services-tab": {
+    "delivery": {
+      "title": "Entrega y acompañamiento",
+      "text": "Documentamos el trabajo y ayudamos a tu equipo a utilizar y mantener la solución. Juntos definimos los siguientes pasos."
+    }
+  },
+  "loading": "Cargando...",
+  "intro": {
+    "client_focus": "Foco en el cliente",
+    "innovation": "Innovación",
+    "transparency": "Transparencia",
+    "empowerment": "Empoderamiento",
+    "autonomy": "Autonomía",
+    "collaboration": "Colaboración"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "help_question": "¿Tienes un desafío técnico?",
+    "schedule_call": "Agenda una llamada de 15 minutos, ¡gratis!",
+    "contact_button": "Contacto"
+  },
+  "contact-page": {
+    "title": "Hablemos",
+    "slogan": "Tu próximo desafío técnico,",
+    "slogan2": "lo resolvemos juntos.",
+    "description": "¿Necesitas software a medida, orientación sobre un sistema existente o ayuda para incorporar IA en tu equipo? Cuéntanos qué quieres lograr. Definiremos contigo el siguiente paso."
+  },
+  "contact-form": {
+    "title": "Contacto",
+    "slogan": "Cuéntanos qué",
+    "slogan2": "necesitas.",
+    "description": "Comparte tu proyecto, el problema que enfrentas o el proceso que quieres mejorar. Podemos ayudarte tanto con orientación técnica como con la implementación."
+  },
+  "services": {
+    "subtitle": "Cómo podemos ayudarte",
+    "titleLead": "Experiencia técnica.",
+    "titleAccent": "Soluciones prácticas.",
+    "description": "Desarrolla software para tu negocio, mejora los sistemas que ya utilizas y ayuda a tu equipo de desarrollo a adoptar IA. Ofrecemos orientación técnica e implementación.",
+    "label": "Nuestra experiencia",
+    "heading": "Tres formas de ayudarte"
+  },
+  "services-tab": {
     "service1Title": "Foco en el Cliente y Colaboración",
-    "service1Text": "Tu visión y objetivos son el corazón de cada decisión que tomamos. A través de la comunicación abierta y la colaboración, damos vida a tus ideas, asegurando que tu perspectiva sea lo que moldee el resultado.",
+    "service1Text": "Trabajamos contigo para entender tu negocio y sus restricciones técnicas. Tu equipo participa en la definición de prioridades y en la implementación.",
     "service2Title": "Innovación",
-    "service2Text": "La innovación está en nuestro ADN. Siempre buscamos nuevas formas de elevar tu proyecto, incorporando tecnologías de vanguardia y tendencias de diseño.",
+    "service2Text": "Elegimos las herramientas por el problema que resuelven. Incluimos IA cuando resulta útil, explicando sus limitaciones y el trabajo necesario.",
     "service3Title": "Transparencia",
-    "service3Text": "We are a creative studio specializing in design, development and strategy many different skills and disciplines in the production of all web.",
+    "service3Text": "Explicamos las recomendaciones, las ventajas y limitaciones de cada opción y los avances con claridad, para que puedas tomar decisiones informadas.",
     "service4Title": "Empoderamiento y Autonomía del cliente",
-    "service4Text": "Tu audiencia está en el centro de nuestra estrategia. Diseñamos y desarrollamos teniendo en cuenta al usuario final, asegurándonos de que tu proyecto resuene con tu público objetivo.",
+    "service4Text": "Documentamos lo que construimos y compartimos el conocimiento que tu equipo necesita para utilizarlo, mantenerlo y decidir cómo continuar.",
     "philosophy": "Filosofía",
     "tab1": "Foco en el cliente y Colaboración",
     "tab2": "Innovación",
@@ -131,9 +79,9 @@
     "readMore": "Leer más"
   },
   "callToAction": {
-    "idea": "¿Tienes una idea en mente?",
-    "consult": "Consúltanos.",
-    "contact": "Contacto"
+    "idea": "¿Un proyecto o un desafío técnico?",
+    "consult": "Encontremos el enfoque adecuado.",
+    "contact": "Hablemos"
   },
   "mainNavbar": {
     "home": "Inicio",
@@ -151,29 +99,104 @@
     "facebook": "Facebook",
     "x": "X",
     "linkedin": "LinkedIn",
-    "instagram": "Instagram"
+    "instagram": "Instagram",
+    "tagline": "Tu socio tecnológico en software e IA."
   },
   "orbit": {
-  "title": "Kobold Solutions y nuestros servicios",
-  "hint": "Explora nuestros servicios · pasa el cursor, toca o usa Tab",
-  "pause": "Pausar animación",
-  "resume": "Reanudar animación",
-  "web": {
-    "title": "Desarrollo web",
-    "description": "Sitios web diseñados para tu negocio."
+    "title": "Kobold Solutions y nuestros servicios",
+    "hint": "Explora nuestros servicios · pasa el cursor, toca o usa Tab",
+    "pause": "Pausar animación",
+    "resume": "Reanudar animación",
+    "development": {
+      "title": "Software a medida",
+      "description": "Aplicaciones e integraciones para tu negocio."
+    },
+    "consulting": {
+      "title": "Consultoría",
+      "description": "Orientación técnica clara y apoyo en la implementación."
+    },
+    "ai": {
+      "title": "IA para equipos",
+      "description": "Programación con IA, conexiones MCP y automatización útil."
+    }
   },
-  "commerce": {
-    "title": "E-commerce",
-    "description": "Transforma tus productos en experiencias de compra."
-  },
-  "software": {
-    "title": "Software a medida",
-    "description": "Soluciones conectadas para tu próxima gran idea."
-  }
-},
   "hero": {
-  "description": "Diseño, tecnología y estrategia para convertir tu próxima idea en una experiencia digital que destaque.",
-  "contact": "Hablemos de tu idea",
-  "services": "Explora los servicios"
-}
+    "eyebrow": "Software a medida · Consultoría · IA",
+    "title": "Tu socio tecnológico",
+    "accent": "de la idea a la implementación.",
+    "description": "Desarrollamos software a medida, resolvemos desafíos técnicos y ayudamos a tu equipo a aprovechar la IA. Desde elegir el enfoque adecuado hasta implementarlo, nos encargamos de los detalles técnicos contigo.",
+    "contact": "Hablemos de tu proyecto",
+    "services": "Explora los servicios"
+  },
+  "about": {
+    "label": "Tu socio tecnológico",
+    "title": "Haz avanzar tu negocio con la tecnología adecuada",
+    "description": "Ya sea que necesites software nuevo, una dirección técnica más clara o ayuda para adoptar IA, trabajamos contigo para entender el problema y entregar una solución práctica. Explicamos las opciones, nos encargamos del trabajo técnico y ayudamos a tu equipo a tomar el control."
+  },
+  "offerings": {
+    "development": {
+      "title": "Desarrollo de Software a Medida",
+      "summary": "Software diseñado para la forma en que trabaja tu negocio. Desarrollamos aplicaciones, herramientas internas e integraciones que resuelven tus necesidades, desde la primera idea hasta la implementación.",
+      "heading": "Software diseñado para tu negocio.",
+      "description": "Partimos de lo que tu negocio necesita, no de una plataforma predefinida. Convertimos los requisitos en aplicaciones y sistemas conectados, mejoramos el software existente y preparamos a tu equipo para utilizar lo que construimos.",
+      "capabilities": [
+        "Análisis de requisitos y definición del proyecto",
+        "Aplicaciones web y de negocio a medida",
+        "Herramientas internas para las operaciones diarias",
+        "Integraciones entre tus herramientas y sistemas",
+        "Modernización de software existente",
+        "Despliegue, documentación y transferencia de conocimiento"
+      ]
+    },
+    "consulting": {
+      "title": "Consultoría de Software",
+      "summary": "Orientación clara para tu próxima decisión técnica. Evaluamos tus sistemas, identificamos mejoras y te ayudamos a elegir e implementar el enfoque adecuado.",
+      "heading": "Un camino claro para tus decisiones técnicas.",
+      "description": "Entiende qué funciona, qué necesita atención y dónde conviene invertir. Revisamos tus sistemas y prioridades, explicamos las ventajas y limitaciones de cada opción y acompañamos la implementación con tu equipo.",
+      "capabilities": [
+        "Evaluación del software y los sistemas existentes",
+        "Revisión de arquitectura y orientación de diseño",
+        "Selección de tecnologías y plataformas",
+        "Análisis y optimización del rendimiento",
+        "Planes técnicos con prioridades claras",
+        "Apoyo práctico en la implementación"
+      ]
+    },
+    "ai": {
+      "title": "IA para Equipos de Desarrollo",
+      "summary": "Ayudamos a tu equipo de desarrollo a aprovechar la IA. Evaluamos su flujo de trabajo, configuramos herramientas de programación asistida por IA y las conectamos con tus sistemas mediante servidores MCP. Ofrecemos orientación técnica e implementación, incluida la automatización de procesos internos relacionados.",
+      "heading": "Pon la IA a trabajar con tu equipo.",
+      "description": "Ayudamos a tu equipo de desarrollo a incorporar IA en su trabajo diario: programación asistida, integraciones prácticas y automatización de procesos internos relacionados. Los servidores MCP (Model Context Protocol) conectan las herramientas de IA con las herramientas y la información de tu empresa. Evaluamos qué conviene, implementamos las conexiones y ayudamos a tu equipo a utilizarlas.",
+      "capabilities": [
+        "Evaluación de flujos de desarrollo y oportunidades de IA",
+        "Configuración de herramientas de programación asistida por IA",
+        "Desarrollo y configuración de servidores MCP a medida",
+        "Integración con herramientas del equipo y contexto del proyecto",
+        "Automatización de procesos internos relacionados",
+        "Formación del equipo, documentación y transferencia de conocimiento"
+      ]
+    }
+  },
+  "marquee": [
+    "Software a Medida",
+    "Consultoría de Software",
+    "IA para Equipos de Desarrollo",
+    "Programación con IA",
+    "Integraciones MCP",
+    "Automatización de Procesos"
+  ],
+  "meta": {
+    "home": {
+      "title": "Kobold Solutions | Software a Medida, Consultoría e IA",
+      "description": "Tu socio tecnológico en desarrollo de software a medida, consultoría e IA para equipos de desarrollo. Orientación práctica e implementación."
+    },
+    "services": {
+      "title": "Desarrollo de Software, Consultoría e IA | Kobold Solutions",
+      "description": "Desarrolla software a medida, mejora tus sistemas y adopta programación con IA, integraciones MCP y automatización junto a Kobold Solutions."
+    },
+    "contact": {
+      "title": "Hablemos de tu Proyecto | Kobold Solutions",
+      "description": "Conversa con Kobold Solutions sobre software a medida, consultoría o adopción de IA en tu equipo de desarrollo. Orientación técnica e implementación."
+    }
+  }
 }

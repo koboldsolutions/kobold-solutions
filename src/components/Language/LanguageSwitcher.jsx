@@ -1,35 +1,39 @@
 import { useRouter } from 'next/router';
-import Image from 'next/image';
+
+const languageNames = { es: 'Español', en: 'English' };
 
 function LanguageSwitcher() {
   const router = useRouter();
-  const { locale, locales, pathname, asPath, query } = router;
+  const { locale, locales, defaultLocale, pathname, asPath, query } = router;
+  const selectedLocale = locale || defaultLocale || 'es';
 
   const handleLanguageChange = (lng) => {
+    if (lng === selectedLocale) return;
     router.push({ pathname, query }, asPath, { locale: lng });
   };
 
   return (
-    <div className="pt-20 flex gap-2 items-center">
-      {locales.map((lng) => (
-        <button
-          key={lng}
-          onClick={() => handleLanguageChange(lng)}
-          disabled={locale === lng}
-          className={`border-none bg-transparent p-0 opacity-80 hover:opacity-100 transition ${
-            locale === lng ? 'ring ring-blue-500 rounded-full' : ''
-          }`}
+    <label className="language-switcher">
+      <span className="language-switcher__label">
+        {selectedLocale === 'es' ? 'Idioma' : 'Language'}
+      </span>
+      <span className="language-switcher__control">
+        <select
+          className="language-switcher__select"
+          value={selectedLocale}
+          onChange={(event) => handleLanguageChange(event.target.value)}
         >
-          <Image
-            src={`/flags/${lng}.png`}
-            alt={lng === 'es' ? 'Español' : 'English'}
-            width={30}
-            height={30}
-            title={lng === 'es' ? 'Español' : 'English'}
-          />
-        </button>
-      ))}
-    </div>
+          {(locales || ['es', 'en']).map((lng) => (
+            <option key={lng} value={lng} lang={lng}>
+              {languageNames[lng] || lng}
+            </option>
+          ))}
+        </select>
+        <svg className="language-switcher__chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+          <path d="m1 1 5 5 5-5" stroke="currentColor" strokeWidth="1.5" />
+        </svg>
+      </span>
+    </label>
   );
 }
 

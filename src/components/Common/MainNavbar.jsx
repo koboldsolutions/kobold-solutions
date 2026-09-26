@@ -63,7 +63,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
           <span className="icon-bar"><i className="fas fa-bars"></i></span>
         </button>
         <div className="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav flex-grow-1 justify-content-center">
             <li className="nav-item">
               <Link className="nav-link" href="/">
                 <span className="rolling-text" suppressHydrationWarning>{t('mainNavbar.home')}</span>
@@ -74,20 +74,20 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                 <span className="rolling-text" suppressHydrationWarning>{t('mainNavbar.services')}</span>
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link" href="/blogs">
                 <span className="rolling-text" suppressHydrationWarning>{t('mainNavbar.blog')}</span>
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link className="nav-link" href="/contact">
                 <span className="rolling-text" suppressHydrationWarning>{t('mainNavbar.contact')}</span>
               </Link>
             </li>
-            <li className="nav-item " >
-              <LanguageSwitcher />
-            </li>
           </ul>
+          <div className="navbar-language">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </nav>

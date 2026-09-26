@@ -134,3 +134,75 @@ body {
 .hover-project:hover {
   transform: scale(1.05);
 }
+
+.navbar .navbar-language {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.navbar .language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  margin: 0 0 0 20px;
+  padding: 12px 0;
+}
+
+.language-switcher__label {
+  font-size: 12px;
+  color: #c5c5c5;
+}
+
+.language-switcher__control {
+  position: relative;
+  display: inline-flex;
+}
+
+.navbar .language-switcher__select {
+  appearance: none;
+  width: auto;
+  min-width: 120px;
+  min-height: 44px;
+  margin: 0;
+  padding: 10px 34px 10px 14px;
+  border: 1px solid #626262;
+  border-radius: 8px;
+  background: #202020;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+  color-scheme: dark;
+}
+
+.navbar .language-switcher__select:hover {
+  border-color: #39b549;
+}
+
+.navbar .language-switcher__select:focus-visible {
+  outline: 2px solid #39b549;
+  outline-offset: 3px;
+}
+
+.language-switcher__chevron {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  pointer-events: none;
+}
+
+@media (max-width: 991px) {
+  .navbar .navbar-language {
+    padding: 0 30px;
+  }
+
+  .navbar .language-switcher {
+    margin-left: 0;
+  }
+}

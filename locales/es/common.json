@@ -1,0 +1,157 @@
+{
+    "web": "Soluciones Web",
+    "web2": "a tu medida",
+    "design":"Diseñando tu Futuro Digital",
+    "circle":"Websites - Mobile - eCommerce - Consultorias -",
+    "circle-two":"  A g e n c i a  -   D I G I T A L - A g e n c i a  -   A G E N C I A -",
+    "nuestro":"Nuestra Agencia Digital",
+    "digitaliza":"Digitaliza tu negocio",
+    "text-1":"Desarrollamos soluciones personalizadas y diseños visionarios. Creemos en entregar soluciones tecnologicas que permiten que los usarios sean independientes",
+    "custom":"Desarrollo de Software a Medida",
+    "p-custom":"Damos vida a tus ideas, diseñando y construyendo soluciones digitales desde la concepción hasta la implementación final.",
+    "see-more":"Ver más",
+    "p-ecommerce":"Transformamos tu visión en experiencias de compra. Creamos experiencias simples y emotivas que unen los objetivos de tu empresa con una excelente experiencia de compra.",
+    "consulting":"Consultoría de Software",
+    "p-consulting":"Compartimos nuestro conocimiento y experiencias para ayudarte a realizar tu siguiente paso.",
+    "experiences":"Experiencias Exitosas en Acción.",
+    "projects":"Proyectos Destacados",
+    "p-projects":"Colección de proyectos destacados que reflejan nuestra pasión por la creatividad y la excelencia en cada detalle.",
+    
+      "experience": {
+        "software": "Experiencia en software"
+      },
+      "process": {
+        "title": "Nuestro Proceso",
+        "investigation": {
+          "title": "Investigación",
+          "text": "Nos sumergimos en tu visión y objetivos, realizando una investigación y comprendiendo tus necesidades, sin costo."
+        },
+        "definition": {
+          "title": "Definición",
+          "text": "Nuestro equipo trabaja para dar vida a tu visión, transformando tus ideas en soluciones impactantes."
+        },
+        "development": {
+          "title": "Desarrollo",
+          "text": "Utilizamos tecnologías de vanguardia y las mejores prácticas de la industria para construir una solución digital robusta."
+        },
+        "delivery": {
+          "title": "Entrega",
+          "text": "Estamos presentes durante la entrega del proyecto y post entrega del proyecto."
+        }
+      },
+      "loading": "Cargando...",
+      "intro": {
+      "client_focus": "Foco en el cliente",
+      "innovation": "Innovación",
+      "transparency": "Transparencia",
+      "empowerment": "Empoderamiento",
+      "autonomy": "Autonomía",
+      "collaboration": "Colaboración"
+      },
+      "contact": {
+        "title": "Contáctanos",
+        "help_question": "¿Necesitas ayuda?",
+        "schedule_call": "Agenda una llamada de 15 minutos, ¡gratis!",
+        "contact_button": "Contacto"
+      },
+      "contact-page": {
+     "title": "Contáctanos",
+    "slogan": "Construyamos juntos",
+    "slogan2": "tu idea!",
+    "description": "Impulsamos el éxito de nuestros clientes mediante la creación de soluciones digitales que generan impacto, estrategias que funcionan y experiencias que perduran en la memoria."
+    },
+    "contact-form": {
+     "title": "Contacto",
+    "slogan": "Despejamos ",
+    "slogan2": "tus dudas.",
+    "description": "¿Listo para hacer realidad tu proyecto? Ya sea para colaborar o simplemente para charlar, ¡estamos aquí para escucharte!"
+    },
+    "services": {
+      "title":"Combinamos nuestra pasión por diseño y código.",
+      "subtitle":"¿ QUÉ OFRECEMOS ?",
+      "description": "Ayudamos a nuestros clientes a triunfar al crear experiencias digitales que comunican de manera clara, alcanzan objetivos de marketing y lucen fantásticas."
+    },
+    "services-page": {
+      "type1": "Desarrollo de Soluciones Personalizadas de Software",
+      "title1": "Calidad en cada línea de código",
+      "text1": "Transformamos tus ideas en soluciones digitales personalizadas. Cada línea de código es pensada y optimizada para brindar un rendimiento excepcional y una experiencia fluida.",
+      "listItem1": "Digitaliza tu empresa",
+      "listItem2": "Experiencias digitales",
+      "listItem3": "Amplía tu audiencia",
+      "listItem4": "Genera confianza",
+      "listItem5": "Promociona servicios y productos",
+      "listItem6": "Mejora la visibilidad en búsquedas",
+
+      "type2": "E-commerce",
+      "title2": "Aumenta tus ventas ampliando tu presencia digital. Te ayudamos a crear una experiencia armónica Omni-canal.",
+      "text2": "Crea tu propio E-commerce, adapta o integra",
+      "list2Item1": "Ventas 24/7 los 365 días del año",
+      "list2Item2": "Gestión eficiente de inventarios y pedidos",
+      "list2Item3": "Conocimiento de tus clientes",
+      "list2Item4": "Reduce costos operativos",
+      "list2Item5": "Facilita la experiencia de tu cliente",
+      "list2Item6": "Compite en el mercado actual",
+
+      "type3": "Consultoría y Optimización de Software",
+      "title3": "Optimización de Software",
+      "text3": "Ayudamos a optimizar tus soluciones de software para un rendimiento y eficiencia óptimos.",
+      "list3Item1": "Análisis exhaustivo de tu software existente.",
+      "list3Item2": "Identificación de áreas de mejora y optimización.",
+      "list3Item3": "Implementación de soluciones para mejorar la eficiencia.",
+      "list3Item4": "Optimización de recursos y tiempos de respuesta.",
+      "list3Item5": "Soporte continuo para garantizar un funcionamiento sin problemas."
+    },
+
+    "services-page2": {
+      "title": "Servicios",
+      "mainTitle": "Nuestros Servicios",
+      "service1Title": "Desarrollo de Software a Medida",
+      "service1Text": "Entendemos tu necesidad y la traemos a la vida, puede ser con desarrollo directo o con herramientas de Low-Code o NoCode, de acuerdo a tu necesidad.",
+      "service2Title": "E-Commerce y CRMs",
+      "service2Text": "Transformamos tu visión en experiencias de compra, con desarrollo directo o con herramientas de Low-Code o NoCode (WordPress-WooCommerce, Shopify, CRMs y más).",
+      "service3Title": "Consultoría y Optimización de Software",
+      "service3Text": "Compartimos nuestro conocimiento y experiencias para ayudarte a realizar tu siguiente paso."
+    },
+    "services-tab": {
+    "service1Title": "Foco en el Cliente y Colaboración",
+    "service1Text": "Tu visión y objetivos son el corazón de cada decisión que tomamos. A través de la comunicación abierta y la colaboración, damos vida a tus ideas, asegurando que tu perspectiva sea lo que moldee el resultado.",
+    "service2Title": "Innovación",
+    "service2Text": "La innovación está en nuestro ADN. Siempre buscamos nuevas formas de elevar tu proyecto, incorporando tecnologías de vanguardia y tendencias de diseño.",
+    "service3Title": "Transparencia",
+    "service3Text": "We are a creative studio specializing in design, development and strategy many different skills and disciplines in the production of all web.",
+    "service4Title": "Empoderamiento y Autonomía del cliente",
+    "service4Text": "Tu audiencia está en el centro de nuestra estrategia. Diseñamos y desarrollamos teniendo en cuenta al usuario final, asegurándonos de que tu proyecto resuene con tu público objetivo.",
+    "philosophy": "Filosofía",
+    "tab1": "Foco en el cliente y Colaboración",
+    "tab2": "Innovación",
+    "tab3": "Transparencia",
+    "tab4": "Empoderamiento y Autonomía",
+    "readMore": "Leer más"
+  },
+  "callToAction": {
+    "idea": "¿Tienes una idea en mente?",
+    "consult": "Consúltanos.",
+    "contact": "Contacto"
+  },
+  "mainNavbar": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "address": "Dirección",
+    "location": "Santa Cruz, Bolivia",
+    "contact": "Contacto",
+    "email": "info@koboldsolutions.com",
+    "phone": "+591 755 21 925",
+    "social": "Social",
+    "facebook": "Facebook",
+    "x": "X",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram"
+  }
+    
+    
+}
+  

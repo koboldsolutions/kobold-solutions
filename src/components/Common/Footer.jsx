@@ -43,8 +43,8 @@ export default function Footer() {
             <h2 className="ks-label">{t('footer.social')}</h2>
             <ul className="rest ks-footer__social">
               {[
-                ['facebook', 'https://www.facebook.com'], ['x', 'https://www.x.com'],
-                ['linkedin', 'https://www.linkedin.com'], ['instagram', 'https://instagram.com'],
+                ['facebook', 'https://www.facebook.com/share/1cpjN7oJJ4/'], ['x', 'https://www.x.com'],
+                ['linkedin', 'https://www.linkedin.com/company/kobold-solutions-es'], ['instagram', 'https://www.instagram.com/koboldsolutions_es?stkn=MTBtcXU0aWQyYngwOQ=='],
               ].map(([name, href]) => <li key={name}><a href={href} target="_blank" rel="noreferrer">{t(`footer.${name}`)}</a></li>)}
             </ul>
           </div>

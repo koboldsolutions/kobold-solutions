@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
 import prefix from '@/common/prefix';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';  // Importa el hook
+import { useTranslation } from 'react-i18next';  // Importa el hook
 
 function Footer({ lightMode, subBg }) {
 

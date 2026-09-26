@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'react-i18next';
 
 function ServicesHeader({ data, subBg }) {
   const { t, i18n } = useTranslation('common');

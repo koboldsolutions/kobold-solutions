@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'react-i18next';
 //= Scripts
 import loadBackgroudImages from '@/common/loadBackgroudImages';
 import isInView from '@/common/isInView';

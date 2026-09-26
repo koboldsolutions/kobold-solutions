@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';  // Importa el hook useTranslation
+import { useTranslation } from 'react-i18next';  // Importa el hook useTranslation
 import prefix from '@/common/prefix';
 
 function ServicesTab({ lightMode }) {

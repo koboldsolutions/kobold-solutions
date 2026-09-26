@@ -1,15 +1,15 @@
-import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
+import { supportedLanguages } from '@/common/i18n';
 
 const languageNames = { es: 'Español', en: 'English' };
 
 function LanguageSwitcher() {
-  const router = useRouter();
-  const { locale, locales, defaultLocale, pathname, asPath, query } = router;
-  const selectedLocale = locale || defaultLocale || 'es';
+  const { i18n } = useTranslation('common');
+  const selectedLocale = i18n.resolvedLanguage || 'es';
 
   const handleLanguageChange = (lng) => {
     if (lng === selectedLocale) return;
-    router.push({ pathname, query }, asPath, { locale: lng });
+    i18n.changeLanguage(lng);
   };
 
   return (
@@ -23,7 +23,7 @@ function LanguageSwitcher() {
           value={selectedLocale}
           onChange={(event) => handleLanguageChange(event.target.value)}
         >
-          {(locales || ['es', 'en']).map((lng) => (
+          {supportedLanguages.map((lng) => (
             <option key={lng} value={lng} lang={lng}>
               {languageNames[lng] || lng}
             </option>

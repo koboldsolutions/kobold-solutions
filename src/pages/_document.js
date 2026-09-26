@@ -5,7 +5,7 @@ export default function Document() {
 
 
   return (
-    <Html lang="en">
+    <Html lang="es">
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="keywords" content="Kobold Solutions" />

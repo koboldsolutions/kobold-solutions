@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import prefix from '@/common/prefix';
 import LanguageSwitcher from '@/components/Language/LanguageSwitcher';

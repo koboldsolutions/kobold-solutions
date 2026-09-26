@@ -1,3 +1,15 @@
+## Static deployment and localization
+
+Run `npm ci` and `npm run build` to generate `out/` for GitHub Pages. The existing workflow publishes that directory. `npm run export` is an alias for the build; preview `out/` with a static file server instead of `next start`. Trailing slashes generate directory index files for direct page loads, and `public/.nojekyll` is copied into the export.
+
+Localization uses `react-i18next`, initialized in `src/common/i18n.js` and provided globally by `src/pages/_app.js`. Both existing `public/locales/{es,en}/common.json` files are bundled, so translations need no server or HTTP backend. Edit these files and rebuild to update copy.
+
+Spanish is the default and the language of exported HTML. After hydration, the app restores `i18nextLng` from localStorage using the browser language detector. Selecting English or Spanish updates the shared i18next instance, localStorage, and the document language without changing the current URL. A saved English preference may briefly show Spanish before hydration. Without a saved preference (or with an unsupported one), the site uses Spanish, regardless of browser language. Existing hardcoded article content is unchanged.
+
+Do not add Next.js `i18n` routing or `serverSideTranslations`: they are unnecessary for this client-side setup. The current empty `basePath`/asset prefix assumes hosting at the domain root; a GitHub Pages repository subpath requires matching route and asset-prefix configuration. The sample `/api/hello` endpoint cannot run on GitHub Pages.
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

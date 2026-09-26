@@ -3,9 +3,13 @@ import Head from "next/head";
 import Script from "next/script";
 import "swiper/css";
 import prefix from '@/common/prefix';
-import { appWithTranslation } from 'next-i18next';
+import { useEffect } from 'react';
+import { I18nextProvider } from 'react-i18next';
+import i18n, { restoreBrowserLanguage } from '@/common/i18n';
 
 function App({ Component, pageProps }) {
+  useEffect(restoreBrowserLanguage, []);
+
   const getLayout = Component.getLayout || ((page) => page);
 
   const scriptPaths = [
@@ -19,7 +23,7 @@ function App({ Component, pageProps }) {
     '/assets/js/scripts.js',
   ];
 
-  return getLayout(
+  return <I18nextProvider i18n={i18n}>{getLayout(
     <>
       <Head>
         <title>Kobold Solutions</title>
@@ -34,7 +38,7 @@ function App({ Component, pageProps }) {
 
       <Script strategy="lazyOnload" src={`${prefix}/assets/js/scripts.js`} />
     </>
-  );
+  )}</I18nextProvider>;
 }
 
-export default appWithTranslation(App);
+export default App;

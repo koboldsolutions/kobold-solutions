@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState  } from 'react';
 import Link from 'next/link';
 import prefix from '@/common/prefix';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'react-i18next';
 
 function Intro({ lightMode }) {
   const { t } = useTranslation('common'); // `ready` indica si las traducciones están cargadas

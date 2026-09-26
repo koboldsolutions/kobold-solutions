@@ -9,19 +9,10 @@ import Navbar from '@/components/Common/MainNavbar';
 import Footer from '@/components/Common/Footer';
 import ContactHeader from '@/components/Contact/ContactHeader';
 import ContactForm from '@/components/Contact/ContactForm';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 
 
 
-export async function getStaticProps({ locale }) {
-   console.log("Ejecutando getStaticProps con locale:", locale); // Verifica si llega aquí
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  };
-}
 
 
 function PageContact() {

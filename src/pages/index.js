@@ -10,7 +10,6 @@ import SectionImage from '@/components/Common/SectionImage';
 
 
 
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import dynamic from 'next/dynamic';
 
@@ -20,14 +19,6 @@ const Footer = dynamic(() => import('@/components/Common/Footer'), { ssr: false 
 
 
 
-export async function getStaticProps({ locale }) {
-   console.log("Ejecutando getStaticProps con locale:", locale); // Verifica si llega aquí
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  };
-}
 
 
 

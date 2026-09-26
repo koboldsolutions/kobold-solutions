@@ -3,7 +3,7 @@ import React, { useEffect, useLayoutEffect, useState  } from 'react';
 
 import loadBackgroudImages from '@/common/loadBackgroudImages';
 import CubeComponent from './Three/CubeComponent';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'react-i18next';
 
 import IdeasText from './Three/IdeasText';
 import prefix

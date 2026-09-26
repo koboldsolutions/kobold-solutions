@@ -16,16 +16,8 @@ import ServicesScroll from '@/components/Services/ServicesScroll';
 import CallToAction from '@/components/Common/CallToAction';
 import ServicesSection from '@/components/Services/ServicesSection';
 import Footer from '@/components/Common/Footer';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])), // Cargar el namespace 'common'
-    },
-  };
-}
 
 
 function PageServices() {

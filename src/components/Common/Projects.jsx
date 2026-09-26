@@ -12,13 +12,13 @@ function Projects() {
       id: 1,
       picture: `${prefix}/dark/assets/imgs/projects/tebanko.png`,
       name: 'Tebanko',
-      position: 'Servicios Fintech',
+      position: 'Fintech',
     },
     {
       id: 2,
       picture: `${prefix}/dark/assets/imgs/projects/tenth.png`,
       name: 'Tenth XR',
-      position: 'Servicios de Realidad Virtual',
+      position: 'Virtual Reality',
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ function Projects() {
       id: 6,
       picture: `${prefix}/dark/assets/imgs/projects/tactoweb.png`,
       name: 'Tacto Desarrolladores',
-      position: 'Bienes Raíces',
+      position: 'Real Estate',
     },
   ]);
 
